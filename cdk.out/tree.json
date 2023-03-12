@@ -1,0 +1,1263 @@
+{
+  "version": "tree-0.1",
+  "tree": {
+    "id": "App",
+    "path": "",
+    "children": {
+      "Tree": {
+        "id": "Tree",
+        "path": "Tree"
+      },
+      "anomaly-detection-data-streams": {
+        "id": "anomaly-detection-data-streams",
+        "path": "anomaly-detection-data-streams",
+        "children": {
+          "outputBucket": {
+            "id": "outputBucket",
+            "path": "anomaly-detection-data-streams/outputBucket",
+            "children": {
+              "Resource": {
+                "id": "Resource",
+                "path": "anomaly-detection-data-streams/outputBucket/Resource",
+                "attributes": {
+                  "aws:cdk:cloudformation:type": "AWS::S3::Bucket",
+                  "aws:cdk:cloudformation:props": {}
+                }
+              },
+              "Notifications": {
+                "id": "Notifications",
+                "path": "anomaly-detection-data-streams/outputBucket/Notifications"
+              }
+            }
+          },
+          "inputDataStream": {
+            "id": "inputDataStream",
+            "path": "anomaly-detection-data-streams/inputDataStream",
+            "children": {
+              "Resource": {
+                "id": "Resource",
+                "path": "anomaly-detection-data-streams/inputDataStream/Resource",
+                "attributes": {
+                  "aws:cdk:cloudformation:type": "AWS::Kinesis::Stream",
+                  "aws:cdk:cloudformation:props": {
+                    "shardCount": 1,
+                    "name": "aws-anomaly-detection-input-data-stream",
+                    "retentionPeriodHours": 24,
+                    "streamEncryption": {
+                      "Fn::If": [
+                        "AwsCdkKinesisEncryptedStreamsUnsupportedRegions",
+                        {
+                          "Ref": "AWS::NoValue"
+                        },
+                        {
+                          "EncryptionType": "KMS",
+                          "KeyId": "alias/aws/kinesis"
+                        }
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "AwsCdkKinesisEncryptedStreamsUnsupportedRegions": {
+            "id": "AwsCdkKinesisEncryptedStreamsUnsupportedRegions",
+            "path": "anomaly-detection-data-streams/AwsCdkKinesisEncryptedStreamsUnsupportedRegions"
+          },
+          "deliveryStreamRole": {
+            "id": "deliveryStreamRole",
+            "path": "anomaly-detection-data-streams/deliveryStreamRole",
+            "children": {
+              "Resource": {
+                "id": "Resource",
+                "path": "anomaly-detection-data-streams/deliveryStreamRole/Resource",
+                "attributes": {
+                  "aws:cdk:cloudformation:type": "AWS::IAM::Role",
+                  "aws:cdk:cloudformation:props": {
+                    "assumeRolePolicyDocument": {
+                      "Statement": [
+                        {
+                          "Action": "sts:AssumeRole",
+                          "Effect": "Allow",
+                          "Principal": {
+                            "Service": "firehose.amazonaws.com"
+                          }
+                        }
+                      ],
+                      "Version": "2012-10-17"
+                    },
+                    "policies": [
+                      {
+                        "policyName": "0",
+                        "policyDocument": {
+                          "Statement": [
+                            {
+                              "Action": "kinesis:DescribeStream",
+                              "Effect": "Allow",
+                              "Resource": {
+                                "Fn::GetAtt": [
+                                  "inputDataStream02E8870B",
+                                  "Arn"
+                                ]
+                              }
+                            }
+                          ],
+                          "Version": "2012-10-17"
+                        }
+                      }
+                    ]
+                  }
+                }
+              },
+              "DefaultPolicy": {
+                "id": "DefaultPolicy",
+                "path": "anomaly-detection-data-streams/deliveryStreamRole/DefaultPolicy",
+                "children": {
+                  "Resource": {
+                    "id": "Resource",
+                    "path": "anomaly-detection-data-streams/deliveryStreamRole/DefaultPolicy/Resource",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::IAM::Policy",
+                      "aws:cdk:cloudformation:props": {
+                        "policyDocument": {
+                          "Statement": [
+                            {
+                              "Action": [
+                                "kinesis:DescribeStreamSummary",
+                                "kinesis:GetRecords",
+                                "kinesis:GetShardIterator",
+                                "kinesis:ListShards",
+                                "kinesis:SubscribeToShard"
+                              ],
+                              "Effect": "Allow",
+                              "Resource": {
+                                "Fn::GetAtt": [
+                                  "inputDataStream02E8870B",
+                                  "Arn"
+                                ]
+                              }
+                            },
+                            {
+                              "Action": [
+                                "s3:DeleteObject*",
+                                "s3:PutObject*",
+                                "s3:Abort*"
+                              ],
+                              "Effect": "Allow",
+                              "Resource": [
+                                {
+                                  "Fn::GetAtt": [
+                                    "outputBucket14BAE956",
+                                    "Arn"
+                                  ]
+                                },
+                                {
+                                  "Fn::Join": [
+                                    "",
+                                    [
+                                      {
+                                        "Fn::GetAtt": [
+                                          "outputBucket14BAE956",
+                                          "Arn"
+                                        ]
+                                      },
+                                      "/*"
+                                    ]
+                                  ]
+                                }
+                              ]
+                            }
+                          ],
+                          "Version": "2012-10-17"
+                        },
+                        "policyName": "deliveryStreamRoleDefaultPolicyC9208632",
+                        "roles": [
+                          {
+                            "Ref": "deliveryStreamRoleB4288E26"
+                          }
+                        ]
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "anomalyDetectionTopic": {
+            "id": "anomalyDetectionTopic",
+            "path": "anomaly-detection-data-streams/anomalyDetectionTopic",
+            "children": {
+              "Resource": {
+                "id": "Resource",
+                "path": "anomaly-detection-data-streams/anomalyDetectionTopic/Resource",
+                "attributes": {
+                  "aws:cdk:cloudformation:type": "AWS::SNS::Topic",
+                  "aws:cdk:cloudformation:props": {}
+                }
+              }
+            }
+          },
+          "dataProcessingFunction": {
+            "id": "dataProcessingFunction",
+            "path": "anomaly-detection-data-streams/dataProcessingFunction",
+            "children": {
+              "ServiceRole": {
+                "id": "ServiceRole",
+                "path": "anomaly-detection-data-streams/dataProcessingFunction/ServiceRole",
+                "children": {
+                  "Resource": {
+                    "id": "Resource",
+                    "path": "anomaly-detection-data-streams/dataProcessingFunction/ServiceRole/Resource",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::IAM::Role",
+                      "aws:cdk:cloudformation:props": {
+                        "assumeRolePolicyDocument": {
+                          "Statement": [
+                            {
+                              "Action": "sts:AssumeRole",
+                              "Effect": "Allow",
+                              "Principal": {
+                                "Service": "lambda.amazonaws.com"
+                              }
+                            }
+                          ],
+                          "Version": "2012-10-17"
+                        },
+                        "managedPolicyArns": [
+                          {
+                            "Fn::Join": [
+                              "",
+                              [
+                                "arn:",
+                                {
+                                  "Ref": "AWS::Partition"
+                                },
+                                ":iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
+                              ]
+                            ]
+                          }
+                        ]
+                      }
+                    }
+                  },
+                  "DefaultPolicy": {
+                    "id": "DefaultPolicy",
+                    "path": "anomaly-detection-data-streams/dataProcessingFunction/ServiceRole/DefaultPolicy",
+                    "children": {
+                      "Resource": {
+                        "id": "Resource",
+                        "path": "anomaly-detection-data-streams/dataProcessingFunction/ServiceRole/DefaultPolicy/Resource",
+                        "attributes": {
+                          "aws:cdk:cloudformation:type": "AWS::IAM::Policy",
+                          "aws:cdk:cloudformation:props": {
+                            "policyDocument": {
+                              "Statement": [
+                                {
+                                  "Action": "sns:Publish",
+                                  "Effect": "Allow",
+                                  "Resource": {
+                                    "Ref": "anomalyDetectionTopic1A0E5948"
+                                  }
+                                }
+                              ],
+                              "Version": "2012-10-17"
+                            },
+                            "policyName": "dataProcessingFunctionServiceRoleDefaultPolicyA0E5FC4B",
+                            "roles": [
+                              {
+                                "Ref": "dataProcessingFunctionServiceRoleB2FCF3A6"
+                              }
+                            ]
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              },
+              "Code": {
+                "id": "Code",
+                "path": "anomaly-detection-data-streams/dataProcessingFunction/Code",
+                "children": {
+                  "Stage": {
+                    "id": "Stage",
+                    "path": "anomaly-detection-data-streams/dataProcessingFunction/Code/Stage"
+                  },
+                  "AssetBucket": {
+                    "id": "AssetBucket",
+                    "path": "anomaly-detection-data-streams/dataProcessingFunction/Code/AssetBucket"
+                  }
+                }
+              },
+              "Resource": {
+                "id": "Resource",
+                "path": "anomaly-detection-data-streams/dataProcessingFunction/Resource",
+                "attributes": {
+                  "aws:cdk:cloudformation:type": "AWS::Lambda::Function",
+                  "aws:cdk:cloudformation:props": {
+                    "code": {
+                      "s3Bucket": {
+                        "Ref": "AssetParametersb9595d1e79bd0ecde7faa6c5c116ac3c209628eef58cad27e6140dfefe4be274S3Bucket3273C3D5"
+                      },
+                      "s3Key": {
+                        "Fn::Join": [
+                          "",
+                          [
+                            {
+                              "Fn::Select": [
+                                0,
+                                {
+                                  "Fn::Split": [
+                                    "||",
+                                    {
+                                      "Ref": "AssetParametersb9595d1e79bd0ecde7faa6c5c116ac3c209628eef58cad27e6140dfefe4be274S3VersionKey5B7646EF"
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "Fn::Select": [
+                                1,
+                                {
+                                  "Fn::Split": [
+                                    "||",
+                                    {
+                                      "Ref": "AssetParametersb9595d1e79bd0ecde7faa6c5c116ac3c209628eef58cad27e6140dfefe4be274S3VersionKey5B7646EF"
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        ]
+                      }
+                    },
+                    "handler": "lambda-handler.main",
+                    "role": {
+                      "Fn::GetAtt": [
+                        "dataProcessingFunctionServiceRoleB2FCF3A6",
+                        "Arn"
+                      ]
+                    },
+                    "runtime": "python3.7",
+                    "environment": {
+                      "variables": {
+                        "TOPIC_ARN": {
+                          "Ref": "anomalyDetectionTopic1A0E5948"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "AssetParameters": {
+            "id": "AssetParameters",
+            "path": "anomaly-detection-data-streams/AssetParameters",
+            "children": {
+              "b9595d1e79bd0ecde7faa6c5c116ac3c209628eef58cad27e6140dfefe4be274": {
+                "id": "b9595d1e79bd0ecde7faa6c5c116ac3c209628eef58cad27e6140dfefe4be274",
+                "path": "anomaly-detection-data-streams/AssetParameters/b9595d1e79bd0ecde7faa6c5c116ac3c209628eef58cad27e6140dfefe4be274",
+                "children": {
+                  "S3Bucket": {
+                    "id": "S3Bucket",
+                    "path": "anomaly-detection-data-streams/AssetParameters/b9595d1e79bd0ecde7faa6c5c116ac3c209628eef58cad27e6140dfefe4be274/S3Bucket"
+                  },
+                  "S3VersionKey": {
+                    "id": "S3VersionKey",
+                    "path": "anomaly-detection-data-streams/AssetParameters/b9595d1e79bd0ecde7faa6c5c116ac3c209628eef58cad27e6140dfefe4be274/S3VersionKey"
+                  },
+                  "ArtifactHash": {
+                    "id": "ArtifactHash",
+                    "path": "anomaly-detection-data-streams/AssetParameters/b9595d1e79bd0ecde7faa6c5c116ac3c209628eef58cad27e6140dfefe4be274/ArtifactHash"
+                  }
+                }
+              }
+            }
+          },
+          "deliveryStream": {
+            "id": "deliveryStream",
+            "path": "anomaly-detection-data-streams/deliveryStream",
+            "attributes": {
+              "aws:cdk:cloudformation:type": "AWS::KinesisFirehose::DeliveryStream",
+              "aws:cdk:cloudformation:props": {
+                "deliveryStreamType": "KinesisStreamAsSource",
+                "kinesisStreamSourceConfiguration": {
+                  "kinesisStreamArn": {
+                    "Fn::GetAtt": [
+                      "inputDataStream02E8870B",
+                      "Arn"
+                    ]
+                  },
+                  "roleArn": {
+                    "Fn::GetAtt": [
+                      "deliveryStreamRoleB4288E26",
+                      "Arn"
+                    ]
+                  }
+                },
+                "s3DestinationConfiguration": {
+                  "bucketArn": {
+                    "Fn::GetAtt": [
+                      "outputBucket14BAE956",
+                      "Arn"
+                    ]
+                  },
+                  "roleArn": {
+                    "Fn::GetAtt": [
+                      "deliveryStreamRoleB4288E26",
+                      "Arn"
+                    ]
+                  }
+                }
+              }
+            }
+          },
+          "anomalieDetectionAppRole": {
+            "id": "anomalieDetectionAppRole",
+            "path": "anomaly-detection-data-streams/anomalieDetectionAppRole",
+            "children": {
+              "Resource": {
+                "id": "Resource",
+                "path": "anomaly-detection-data-streams/anomalieDetectionAppRole/Resource",
+                "attributes": {
+                  "aws:cdk:cloudformation:type": "AWS::IAM::Role",
+                  "aws:cdk:cloudformation:props": {
+                    "assumeRolePolicyDocument": {
+                      "Statement": [
+                        {
+                          "Action": "sts:AssumeRole",
+                          "Effect": "Allow",
+                          "Principal": {
+                            "Service": "kinesisanalytics.amazonaws.com"
+                          }
+                        }
+                      ],
+                      "Version": "2012-10-17"
+                    },
+                    "managedPolicyArns": [
+                      {
+                        "Fn::Join": [
+                          "",
+                          [
+                            "arn:",
+                            {
+                              "Ref": "AWS::Partition"
+                            },
+                            ":iam::aws:policy/AmazonKinesisReadOnlyAccess"
+                          ]
+                        ]
+                      }
+                    ],
+                    "policies": [
+                      {
+                        "policyName": "0",
+                        "policyDocument": {
+                          "Statement": [
+                            {
+                              "Action": [
+                                "lambda:GetFunctionConfiguration",
+                                "lambda:InvokeFunction"
+                              ],
+                              "Effect": "Allow",
+                              "Resource": {
+                                "Fn::GetAtt": [
+                                  "dataProcessingFunctionDC0052C9",
+                                  "Arn"
+                                ]
+                              }
+                            }
+                          ],
+                          "Version": "2012-10-17"
+                        }
+                      }
+                    ]
+                  }
+                }
+              }
+            }
+          },
+          "anomalieDetectionApp": {
+            "id": "anomalieDetectionApp",
+            "path": "anomaly-detection-data-streams/anomalieDetectionApp",
+            "attributes": {
+              "aws:cdk:cloudformation:type": "AWS::KinesisAnalytics::Application",
+              "aws:cdk:cloudformation:props": {
+                "inputs": [
+                  {
+                    "inputSchema": {
+                      "recordColumns": [
+                        {
+                          "name": "sensor_id",
+                          "sqlType": "CHAR(30)",
+                          "mapping": "$.sensor_id"
+                        },
+                        {
+                          "name": "temperature",
+                          "sqlType": "DOUBLE",
+                          "mapping": "$.temperature"
+                        },
+                        {
+                          "name": "co2",
+                          "sqlType": "DOUBLE",
+                          "mapping": "$.co2"
+                        },
+                        {
+                          "name": "energy_needed",
+                          "sqlType": "DOUBLE",
+                          "mapping": "$.energy_needed"
+                        }
+                      ],
+                      "recordFormat": {
+                        "recordFormatType": "JSON",
+                        "mappingParameters": {
+                          "jsonMappingParameters": {
+                            "recordRowPath": "$"
+                          }
+                        }
+                      }
+                    },
+                    "namePrefix": "SOURCE_SQL_STREAM",
+                    "kinesisStreamsInput": {
+                      "resourceArn": {
+                        "Fn::GetAtt": [
+                          "inputDataStream02E8870B",
+                          "Arn"
+                        ]
+                      },
+                      "roleArn": {
+                        "Fn::GetAtt": [
+                          "anomalieDetectionAppRole16383D2A",
+                          "Arn"
+                        ]
+                      }
+                    }
+                  }
+                ],
+                "applicationCode": "-- ** Anomaly detection **\n-- Compute an anomaly score for each record in the source stream using Random Cut Forest\n-- Creates a temporary stream and defines a schema\nCREATE OR REPLACE STREAM \"TEMP_STREAM\" (\n   \"sensor_id\"        VARCHAR,\n   \"temperature\"      DOUBLE,\n   \"co2\"              DOUBLE,\n   \"energy_needed\"    DOUBLE,\n   \"ANOMALY_SCORE\"    DOUBLE);\n\n   -- Creates an output stream and defines a schema\nCREATE OR REPLACE STREAM \"PROCESS_STREAM\" (\n   \"sensor_id\"        VARCHAR,\n   \"temperature\"      DOUBLE,\n   \"co2\"              DOUBLE,\n   \"energy_needed\"    DOUBLE,\n   \"ANOMALY_SCORE\"    DOUBLE);\n\n-- Compute an anomaly score for each record in the source stream\n-- using Random Cut Forest\nCREATE OR REPLACE PUMP \"STREAM_PUMP\" AS INSERT INTO \"TEMP_STREAM\"\nSELECT STREAM \"sensor_id\", \"temperature\", \"co2\", \"energy_needed\", \"ANOMALY_SCORE\" FROM\n  TABLE(RANDOM_CUT_FOREST(\n    CURSOR(SELECT STREAM * FROM \"SOURCE_SQL_STREAM_001\")\n  )\n);\n-- Sort records by descending anomaly score, insert into output stream\nCREATE OR REPLACE PUMP \"PROCESS_PUMP\" AS INSERT INTO \"PROCESS_STREAM\"\nSELECT STREAM * FROM \"TEMP_STREAM\"\nWHERE ANOMALY_SCORE > 1.5\nORDER BY FLOOR(\"TEMP_STREAM\".ROWTIME TO SECOND), ANOMALY_SCORE DESC;"
+              }
+            }
+          },
+          "anomalieDetectionAppOutputLambda": {
+            "id": "anomalieDetectionAppOutputLambda",
+            "path": "anomaly-detection-data-streams/anomalieDetectionAppOutputLambda",
+            "attributes": {
+              "aws:cdk:cloudformation:type": "AWS::KinesisAnalytics::ApplicationOutput",
+              "aws:cdk:cloudformation:props": {
+                "applicationName": {
+                  "Ref": "anomalieDetectionApp"
+                },
+                "output": {
+                  "destinationSchema": {
+                    "recordFormatType": "JSON"
+                  },
+                  "lambdaOutput": {
+                    "resourceArn": {
+                      "Fn::GetAtt": [
+                        "dataProcessingFunctionDC0052C9",
+                        "Arn"
+                      ]
+                    },
+                    "roleArn": {
+                      "Fn::GetAtt": [
+                        "anomalieDetectionAppRole16383D2A",
+                        "Arn"
+                      ]
+                    }
+                  },
+                  "name": "PROCESS_STREAM"
+                }
+              }
+            }
+          },
+          "VPC": {
+            "id": "VPC",
+            "path": "anomaly-detection-data-streams/VPC",
+            "children": {
+              "Resource": {
+                "id": "Resource",
+                "path": "anomaly-detection-data-streams/VPC/Resource",
+                "attributes": {
+                  "aws:cdk:cloudformation:type": "AWS::EC2::VPC",
+                  "aws:cdk:cloudformation:props": {
+                    "cidrBlock": "10.0.0.0/16",
+                    "enableDnsHostnames": true,
+                    "enableDnsSupport": true,
+                    "instanceTenancy": "default",
+                    "tags": [
+                      {
+                        "key": "Name",
+                        "value": "anomaly-detection-data-streams/VPC"
+                      }
+                    ]
+                  }
+                }
+              },
+              "privateSubnet1": {
+                "id": "privateSubnet1",
+                "path": "anomaly-detection-data-streams/VPC/privateSubnet1",
+                "children": {
+                  "Subnet": {
+                    "id": "Subnet",
+                    "path": "anomaly-detection-data-streams/VPC/privateSubnet1/Subnet",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::EC2::Subnet",
+                      "aws:cdk:cloudformation:props": {
+                        "cidrBlock": "10.0.0.0/18",
+                        "vpcId": {
+                          "Ref": "VPCB9E5F0B4"
+                        },
+                        "availabilityZone": {
+                          "Fn::Select": [
+                            0,
+                            {
+                              "Fn::GetAZs": ""
+                            }
+                          ]
+                        },
+                        "mapPublicIpOnLaunch": false,
+                        "tags": [
+                          {
+                            "key": "aws-cdk:subnet-name",
+                            "value": "private"
+                          },
+                          {
+                            "key": "aws-cdk:subnet-type",
+                            "value": "Private"
+                          },
+                          {
+                            "key": "Name",
+                            "value": "anomaly-detection-data-streams/VPC/privateSubnet1"
+                          }
+                        ]
+                      }
+                    }
+                  },
+                  "Acl": {
+                    "id": "Acl",
+                    "path": "anomaly-detection-data-streams/VPC/privateSubnet1/Acl"
+                  },
+                  "RouteTable": {
+                    "id": "RouteTable",
+                    "path": "anomaly-detection-data-streams/VPC/privateSubnet1/RouteTable",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::EC2::RouteTable",
+                      "aws:cdk:cloudformation:props": {
+                        "vpcId": {
+                          "Ref": "VPCB9E5F0B4"
+                        },
+                        "tags": [
+                          {
+                            "key": "Name",
+                            "value": "anomaly-detection-data-streams/VPC/privateSubnet1"
+                          }
+                        ]
+                      }
+                    }
+                  },
+                  "RouteTableAssociation": {
+                    "id": "RouteTableAssociation",
+                    "path": "anomaly-detection-data-streams/VPC/privateSubnet1/RouteTableAssociation",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::EC2::SubnetRouteTableAssociation",
+                      "aws:cdk:cloudformation:props": {
+                        "routeTableId": {
+                          "Ref": "VPCprivateSubnet1RouteTable41566AF9"
+                        },
+                        "subnetId": {
+                          "Ref": "VPCprivateSubnet1SubnetE522290D"
+                        }
+                      }
+                    }
+                  },
+                  "DefaultRoute": {
+                    "id": "DefaultRoute",
+                    "path": "anomaly-detection-data-streams/VPC/privateSubnet1/DefaultRoute",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::EC2::Route",
+                      "aws:cdk:cloudformation:props": {
+                        "routeTableId": {
+                          "Ref": "VPCprivateSubnet1RouteTable41566AF9"
+                        },
+                        "destinationCidrBlock": "0.0.0.0/0",
+                        "natGatewayId": {
+                          "Ref": "VPCpublicSubnet1NATGatewayEEDEB5A1"
+                        }
+                      }
+                    }
+                  }
+                }
+              },
+              "privateSubnet2": {
+                "id": "privateSubnet2",
+                "path": "anomaly-detection-data-streams/VPC/privateSubnet2",
+                "children": {
+                  "Subnet": {
+                    "id": "Subnet",
+                    "path": "anomaly-detection-data-streams/VPC/privateSubnet2/Subnet",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::EC2::Subnet",
+                      "aws:cdk:cloudformation:props": {
+                        "cidrBlock": "10.0.64.0/18",
+                        "vpcId": {
+                          "Ref": "VPCB9E5F0B4"
+                        },
+                        "availabilityZone": {
+                          "Fn::Select": [
+                            1,
+                            {
+                              "Fn::GetAZs": ""
+                            }
+                          ]
+                        },
+                        "mapPublicIpOnLaunch": false,
+                        "tags": [
+                          {
+                            "key": "aws-cdk:subnet-name",
+                            "value": "private"
+                          },
+                          {
+                            "key": "aws-cdk:subnet-type",
+                            "value": "Private"
+                          },
+                          {
+                            "key": "Name",
+                            "value": "anomaly-detection-data-streams/VPC/privateSubnet2"
+                          }
+                        ]
+                      }
+                    }
+                  },
+                  "Acl": {
+                    "id": "Acl",
+                    "path": "anomaly-detection-data-streams/VPC/privateSubnet2/Acl"
+                  },
+                  "RouteTable": {
+                    "id": "RouteTable",
+                    "path": "anomaly-detection-data-streams/VPC/privateSubnet2/RouteTable",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::EC2::RouteTable",
+                      "aws:cdk:cloudformation:props": {
+                        "vpcId": {
+                          "Ref": "VPCB9E5F0B4"
+                        },
+                        "tags": [
+                          {
+                            "key": "Name",
+                            "value": "anomaly-detection-data-streams/VPC/privateSubnet2"
+                          }
+                        ]
+                      }
+                    }
+                  },
+                  "RouteTableAssociation": {
+                    "id": "RouteTableAssociation",
+                    "path": "anomaly-detection-data-streams/VPC/privateSubnet2/RouteTableAssociation",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::EC2::SubnetRouteTableAssociation",
+                      "aws:cdk:cloudformation:props": {
+                        "routeTableId": {
+                          "Ref": "VPCprivateSubnet2RouteTableBBE8BB2B"
+                        },
+                        "subnetId": {
+                          "Ref": "VPCprivateSubnet2Subnet2F4D9530"
+                        }
+                      }
+                    }
+                  },
+                  "DefaultRoute": {
+                    "id": "DefaultRoute",
+                    "path": "anomaly-detection-data-streams/VPC/privateSubnet2/DefaultRoute",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::EC2::Route",
+                      "aws:cdk:cloudformation:props": {
+                        "routeTableId": {
+                          "Ref": "VPCprivateSubnet2RouteTableBBE8BB2B"
+                        },
+                        "destinationCidrBlock": "0.0.0.0/0",
+                        "natGatewayId": {
+                          "Ref": "VPCpublicSubnet1NATGatewayEEDEB5A1"
+                        }
+                      }
+                    }
+                  }
+                }
+              },
+              "publicSubnet1": {
+                "id": "publicSubnet1",
+                "path": "anomaly-detection-data-streams/VPC/publicSubnet1",
+                "children": {
+                  "Subnet": {
+                    "id": "Subnet",
+                    "path": "anomaly-detection-data-streams/VPC/publicSubnet1/Subnet",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::EC2::Subnet",
+                      "aws:cdk:cloudformation:props": {
+                        "cidrBlock": "10.0.128.0/18",
+                        "vpcId": {
+                          "Ref": "VPCB9E5F0B4"
+                        },
+                        "availabilityZone": {
+                          "Fn::Select": [
+                            0,
+                            {
+                              "Fn::GetAZs": ""
+                            }
+                          ]
+                        },
+                        "mapPublicIpOnLaunch": true,
+                        "tags": [
+                          {
+                            "key": "aws-cdk:subnet-name",
+                            "value": "public"
+                          },
+                          {
+                            "key": "aws-cdk:subnet-type",
+                            "value": "Public"
+                          },
+                          {
+                            "key": "Name",
+                            "value": "anomaly-detection-data-streams/VPC/publicSubnet1"
+                          }
+                        ]
+                      }
+                    }
+                  },
+                  "Acl": {
+                    "id": "Acl",
+                    "path": "anomaly-detection-data-streams/VPC/publicSubnet1/Acl"
+                  },
+                  "RouteTable": {
+                    "id": "RouteTable",
+                    "path": "anomaly-detection-data-streams/VPC/publicSubnet1/RouteTable",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::EC2::RouteTable",
+                      "aws:cdk:cloudformation:props": {
+                        "vpcId": {
+                          "Ref": "VPCB9E5F0B4"
+                        },
+                        "tags": [
+                          {
+                            "key": "Name",
+                            "value": "anomaly-detection-data-streams/VPC/publicSubnet1"
+                          }
+                        ]
+                      }
+                    }
+                  },
+                  "RouteTableAssociation": {
+                    "id": "RouteTableAssociation",
+                    "path": "anomaly-detection-data-streams/VPC/publicSubnet1/RouteTableAssociation",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::EC2::SubnetRouteTableAssociation",
+                      "aws:cdk:cloudformation:props": {
+                        "routeTableId": {
+                          "Ref": "VPCpublicSubnet1RouteTableF591E248"
+                        },
+                        "subnetId": {
+                          "Ref": "VPCpublicSubnet1Subnet325F50B2"
+                        }
+                      }
+                    }
+                  },
+                  "DefaultRoute": {
+                    "id": "DefaultRoute",
+                    "path": "anomaly-detection-data-streams/VPC/publicSubnet1/DefaultRoute",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::EC2::Route",
+                      "aws:cdk:cloudformation:props": {
+                        "routeTableId": {
+                          "Ref": "VPCpublicSubnet1RouteTableF591E248"
+                        },
+                        "destinationCidrBlock": "0.0.0.0/0",
+                        "gatewayId": {
+                          "Ref": "VPCIGWB7E252D3"
+                        }
+                      }
+                    }
+                  },
+                  "EIP": {
+                    "id": "EIP",
+                    "path": "anomaly-detection-data-streams/VPC/publicSubnet1/EIP",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::EC2::EIP",
+                      "aws:cdk:cloudformation:props": {
+                        "domain": "vpc",
+                        "tags": [
+                          {
+                            "key": "Name",
+                            "value": "anomaly-detection-data-streams/VPC/publicSubnet1"
+                          }
+                        ]
+                      }
+                    }
+                  },
+                  "NATGateway": {
+                    "id": "NATGateway",
+                    "path": "anomaly-detection-data-streams/VPC/publicSubnet1/NATGateway",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::EC2::NatGateway",
+                      "aws:cdk:cloudformation:props": {
+                        "allocationId": {
+                          "Fn::GetAtt": [
+                            "VPCpublicSubnet1EIP2D50A06D",
+                            "AllocationId"
+                          ]
+                        },
+                        "subnetId": {
+                          "Ref": "VPCpublicSubnet1Subnet325F50B2"
+                        },
+                        "tags": [
+                          {
+                            "key": "Name",
+                            "value": "anomaly-detection-data-streams/VPC/publicSubnet1"
+                          }
+                        ]
+                      }
+                    }
+                  }
+                }
+              },
+              "publicSubnet2": {
+                "id": "publicSubnet2",
+                "path": "anomaly-detection-data-streams/VPC/publicSubnet2",
+                "children": {
+                  "Subnet": {
+                    "id": "Subnet",
+                    "path": "anomaly-detection-data-streams/VPC/publicSubnet2/Subnet",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::EC2::Subnet",
+                      "aws:cdk:cloudformation:props": {
+                        "cidrBlock": "10.0.192.0/18",
+                        "vpcId": {
+                          "Ref": "VPCB9E5F0B4"
+                        },
+                        "availabilityZone": {
+                          "Fn::Select": [
+                            1,
+                            {
+                              "Fn::GetAZs": ""
+                            }
+                          ]
+                        },
+                        "mapPublicIpOnLaunch": true,
+                        "tags": [
+                          {
+                            "key": "aws-cdk:subnet-name",
+                            "value": "public"
+                          },
+                          {
+                            "key": "aws-cdk:subnet-type",
+                            "value": "Public"
+                          },
+                          {
+                            "key": "Name",
+                            "value": "anomaly-detection-data-streams/VPC/publicSubnet2"
+                          }
+                        ]
+                      }
+                    }
+                  },
+                  "Acl": {
+                    "id": "Acl",
+                    "path": "anomaly-detection-data-streams/VPC/publicSubnet2/Acl"
+                  },
+                  "RouteTable": {
+                    "id": "RouteTable",
+                    "path": "anomaly-detection-data-streams/VPC/publicSubnet2/RouteTable",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::EC2::RouteTable",
+                      "aws:cdk:cloudformation:props": {
+                        "vpcId": {
+                          "Ref": "VPCB9E5F0B4"
+                        },
+                        "tags": [
+                          {
+                            "key": "Name",
+                            "value": "anomaly-detection-data-streams/VPC/publicSubnet2"
+                          }
+                        ]
+                      }
+                    }
+                  },
+                  "RouteTableAssociation": {
+                    "id": "RouteTableAssociation",
+                    "path": "anomaly-detection-data-streams/VPC/publicSubnet2/RouteTableAssociation",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::EC2::SubnetRouteTableAssociation",
+                      "aws:cdk:cloudformation:props": {
+                        "routeTableId": {
+                          "Ref": "VPCpublicSubnet2RouteTable55DAB1BB"
+                        },
+                        "subnetId": {
+                          "Ref": "VPCpublicSubnet2Subnet2B2DFF71"
+                        }
+                      }
+                    }
+                  },
+                  "DefaultRoute": {
+                    "id": "DefaultRoute",
+                    "path": "anomaly-detection-data-streams/VPC/publicSubnet2/DefaultRoute",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::EC2::Route",
+                      "aws:cdk:cloudformation:props": {
+                        "routeTableId": {
+                          "Ref": "VPCpublicSubnet2RouteTable55DAB1BB"
+                        },
+                        "destinationCidrBlock": "0.0.0.0/0",
+                        "gatewayId": {
+                          "Ref": "VPCIGWB7E252D3"
+                        }
+                      }
+                    }
+                  }
+                }
+              },
+              "IGW": {
+                "id": "IGW",
+                "path": "anomaly-detection-data-streams/VPC/IGW",
+                "attributes": {
+                  "aws:cdk:cloudformation:type": "AWS::EC2::InternetGateway",
+                  "aws:cdk:cloudformation:props": {
+                    "tags": [
+                      {
+                        "key": "Name",
+                        "value": "anomaly-detection-data-streams/VPC"
+                      }
+                    ]
+                  }
+                }
+              },
+              "VPCGW": {
+                "id": "VPCGW",
+                "path": "anomaly-detection-data-streams/VPC/VPCGW",
+                "attributes": {
+                  "aws:cdk:cloudformation:type": "AWS::EC2::VPCGatewayAttachment",
+                  "aws:cdk:cloudformation:props": {
+                    "vpcId": {
+                      "Ref": "VPCB9E5F0B4"
+                    },
+                    "internetGatewayId": {
+                      "Ref": "VPCIGWB7E252D3"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "producerInstanceRole": {
+            "id": "producerInstanceRole",
+            "path": "anomaly-detection-data-streams/producerInstanceRole",
+            "children": {
+              "Resource": {
+                "id": "Resource",
+                "path": "anomaly-detection-data-streams/producerInstanceRole/Resource",
+                "attributes": {
+                  "aws:cdk:cloudformation:type": "AWS::IAM::Role",
+                  "aws:cdk:cloudformation:props": {
+                    "assumeRolePolicyDocument": {
+                      "Statement": [
+                        {
+                          "Action": "sts:AssumeRole",
+                          "Effect": "Allow",
+                          "Principal": {
+                            "Service": {
+                              "Fn::Join": [
+                                "",
+                                [
+                                  "ec2.",
+                                  {
+                                    "Ref": "AWS::URLSuffix"
+                                  }
+                                ]
+                              ]
+                            }
+                          }
+                        }
+                      ],
+                      "Version": "2012-10-17"
+                    },
+                    "managedPolicyArns": [
+                      {
+                        "Fn::Join": [
+                          "",
+                          [
+                            "arn:",
+                            {
+                              "Ref": "AWS::Partition"
+                            },
+                            ":iam::aws:policy/AmazonSSMManagedInstanceCore"
+                          ]
+                        ]
+                      }
+                    ]
+                  }
+                }
+              },
+              "DefaultPolicy": {
+                "id": "DefaultPolicy",
+                "path": "anomaly-detection-data-streams/producerInstanceRole/DefaultPolicy",
+                "children": {
+                  "Resource": {
+                    "id": "Resource",
+                    "path": "anomaly-detection-data-streams/producerInstanceRole/DefaultPolicy/Resource",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::IAM::Policy",
+                      "aws:cdk:cloudformation:props": {
+                        "policyDocument": {
+                          "Statement": [
+                            {
+                              "Action": [
+                                "kinesis:ListShards",
+                                "kinesis:PutRecord",
+                                "kinesis:PutRecords"
+                              ],
+                              "Effect": "Allow",
+                              "Resource": {
+                                "Fn::GetAtt": [
+                                  "inputDataStream02E8870B",
+                                  "Arn"
+                                ]
+                              }
+                            }
+                          ],
+                          "Version": "2012-10-17"
+                        },
+                        "policyName": "producerInstanceRoleDefaultPolicy7FCABBDA",
+                        "roles": [
+                          {
+                            "Ref": "producerInstanceRoleC9776AF2"
+                          }
+                        ]
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "producerInstance": {
+            "id": "producerInstance",
+            "path": "anomaly-detection-data-streams/producerInstance",
+            "children": {
+              "InstanceSecurityGroup": {
+                "id": "InstanceSecurityGroup",
+                "path": "anomaly-detection-data-streams/producerInstance/InstanceSecurityGroup",
+                "children": {
+                  "Resource": {
+                    "id": "Resource",
+                    "path": "anomaly-detection-data-streams/producerInstance/InstanceSecurityGroup/Resource",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::EC2::SecurityGroup",
+                      "aws:cdk:cloudformation:props": {
+                        "groupDescription": "anomaly-detection-data-streams/producerInstance/InstanceSecurityGroup",
+                        "securityGroupEgress": [
+                          {
+                            "cidrIp": "0.0.0.0/0",
+                            "description": "Allow all outbound traffic by default",
+                            "ipProtocol": "-1"
+                          }
+                        ],
+                        "tags": [
+                          {
+                            "key": "Name",
+                            "value": "anomaly-detection-data-streams/producerInstance"
+                          }
+                        ],
+                        "vpcId": {
+                          "Ref": "VPCB9E5F0B4"
+                        }
+                      }
+                    }
+                  }
+                }
+              },
+              "InstanceProfile": {
+                "id": "InstanceProfile",
+                "path": "anomaly-detection-data-streams/producerInstance/InstanceProfile",
+                "attributes": {
+                  "aws:cdk:cloudformation:type": "AWS::IAM::InstanceProfile",
+                  "aws:cdk:cloudformation:props": {
+                    "roles": [
+                      {
+                        "Ref": "producerInstanceRoleC9776AF2"
+                      }
+                    ]
+                  }
+                }
+              },
+              "Resource": {
+                "id": "Resource",
+                "path": "anomaly-detection-data-streams/producerInstance/Resource",
+                "attributes": {
+                  "aws:cdk:cloudformation:type": "AWS::EC2::Instance",
+                  "aws:cdk:cloudformation:props": {
+                    "availabilityZone": {
+                      "Fn::Select": [
+                        0,
+                        {
+                          "Fn::GetAZs": ""
+                        }
+                      ]
+                    },
+                    "iamInstanceProfile": {
+                      "Ref": "producerInstanceInstanceProfile14DF1520"
+                    },
+                    "imageId": {
+                      "Ref": "SsmParameterValueawsserviceamiamazonlinuxlatestamzn2amihvmx8664gp2C96584B6F00A464EAD1953AFF4B05118Parameter"
+                    },
+                    "instanceType": "t2.micro",
+                    "securityGroupIds": [
+                      {
+                        "Fn::GetAtt": [
+                          "producerInstanceInstanceSecurityGroupDF0C4BFE",
+                          "GroupId"
+                        ]
+                      }
+                    ],
+                    "subnetId": {
+                      "Ref": "VPCprivateSubnet1SubnetE522290D"
+                    },
+                    "tags": [
+                      {
+                        "key": "Name",
+                        "value": "anomaly-detection-data-streams/producerInstance"
+                      }
+                    ],
+                    "userData": {
+                      "Fn::Base64": "#!/bin/bash\n yum update -y\n yum install python3 -y\n sudo yum install -y jq\n pip3 install boto3 --user\n pip3 install numpy --user\n curl https://realtime-anomaly-detection-aws.s3.ap-south-1.amazonaws.com/producer/producer.py -o /tmp/producer.py"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "SsmParameterValue:--aws--service--ami-amazon-linux-latest--amzn2-ami-hvm-x86_64-gp2:C96584B6-F00A-464E-AD19-53AFF4B05118.Parameter": {
+            "id": "SsmParameterValue:--aws--service--ami-amazon-linux-latest--amzn2-ami-hvm-x86_64-gp2:C96584B6-F00A-464E-AD19-53AFF4B05118.Parameter",
+            "path": "anomaly-detection-data-streams/SsmParameterValue:--aws--service--ami-amazon-linux-latest--amzn2-ami-hvm-x86_64-gp2:C96584B6-F00A-464E-AD19-53AFF4B05118.Parameter"
+          },
+          "SsmParameterValue:--aws--service--ami-amazon-linux-latest--amzn2-ami-hvm-x86_64-gp2:C96584B6-F00A-464E-AD19-53AFF4B05118": {
+            "id": "SsmParameterValue:--aws--service--ami-amazon-linux-latest--amzn2-ami-hvm-x86_64-gp2:C96584B6-F00A-464E-AD19-53AFF4B05118",
+            "path": "anomaly-detection-data-streams/SsmParameterValue:--aws--service--ami-amazon-linux-latest--amzn2-ami-hvm-x86_64-gp2:C96584B6-F00A-464E-AD19-53AFF4B05118"
+          },
+          "CDKMetadata": {
+            "id": "CDKMetadata",
+            "path": "anomaly-detection-data-streams/CDKMetadata",
+            "children": {
+              "Default": {
+                "id": "Default",
+                "path": "anomaly-detection-data-streams/CDKMetadata/Default"
+              },
+              "Condition": {
+                "id": "Condition",
+                "path": "anomaly-detection-data-streams/CDKMetadata/Condition"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

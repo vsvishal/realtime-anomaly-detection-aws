@@ -6,7 +6,7 @@ If you prefer to deploy it manually, you can clone this repo and use [AWS Cloud 
 Manually create a virtualenv on MacOS and Linux:
 
 ```
-$ python3 -m venv .env
+$ python -m venv .env
 ```
 
 After the init process completes and the virtualenv is created, you can use the following

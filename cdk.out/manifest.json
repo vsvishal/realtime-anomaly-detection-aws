@@ -1,0 +1,962 @@
+{
+  "version": "7.0.0",
+  "artifacts": {
+    "Tree": {
+      "type": "cdk:tree",
+      "properties": {
+        "file": "tree.json"
+      }
+    },
+    "anomaly-detection-data-streams": {
+      "type": "aws:cloudformation:stack",
+      "environment": "aws://unknown-account/unknown-region",
+      "properties": {
+        "templateFile": "anomaly-detection-data-streams.template.json"
+      },
+      "metadata": {
+        "/anomaly-detection-data-streams": [
+          {
+            "type": "aws:cdk:asset",
+            "data": {
+              "path": "asset.b9595d1e79bd0ecde7faa6c5c116ac3c209628eef58cad27e6140dfefe4be274",
+              "id": "b9595d1e79bd0ecde7faa6c5c116ac3c209628eef58cad27e6140dfefe4be274",
+              "packaging": "zip",
+              "sourceHash": "b9595d1e79bd0ecde7faa6c5c116ac3c209628eef58cad27e6140dfefe4be274",
+              "s3BucketParameter": "AssetParametersb9595d1e79bd0ecde7faa6c5c116ac3c209628eef58cad27e6140dfefe4be274S3Bucket3273C3D5",
+              "s3KeyParameter": "AssetParametersb9595d1e79bd0ecde7faa6c5c116ac3c209628eef58cad27e6140dfefe4be274S3VersionKey5B7646EF",
+              "artifactHashParameter": "AssetParametersb9595d1e79bd0ecde7faa6c5c116ac3c209628eef58cad27e6140dfefe4be274ArtifactHashE9EB9591"
+            },
+            "trace": [
+              "ConstructNode.addMetadata (C:\\Users\\VISHALRS\\AppData\\Local\\Temp\\jsii-kernel-7oAUSy\\node_modules\\@aws-cdk\\core\\lib\\construct-compat.js:395:62)",
+              "LegacyStackSynthesizer.doAddFileAsset (C:\\Users\\VISHALRS\\AppData\\Local\\Temp\\jsii-kernel-7oAUSy\\node_modules\\@aws-cdk\\core\\lib\\stack-synthesizers\\legacy.js:167:29)",
+              "LegacyStackSynthesizer.addFileAsset (C:\\Users\\VISHALRS\\AppData\\Local\\Temp\\jsii-kernel-7oAUSy\\node_modules\\@aws-cdk\\core\\lib\\stack-synthesizers\\legacy.js:81:25)",
+              "Stack.addFileAsset (C:\\Users\\VISHALRS\\AppData\\Local\\Temp\\jsii-kernel-7oAUSy\\node_modules\\@aws-cdk\\core\\lib\\stack.js:398:33)",
+              "LegacyStackSynthesizer.addFileAsset (C:\\Users\\VISHALRS\\AppData\\Local\\Temp\\jsii-kernel-7oAUSy\\node_modules\\@aws-cdk\\core\\lib\\stack-synthesizers\\legacy.js:85:31)",
+              "new Asset (C:\\Users\\VISHALRS\\AppData\\Local\\Temp\\jsii-kernel-7oAUSy\\node_modules\\@aws-cdk\\aws-s3-assets\\lib\\asset.js:41:44)",
+              "AssetCode.bind (C:\\Users\\VISHALRS\\AppData\\Local\\Temp\\jsii-kernel-7oAUSy\\node_modules\\@aws-cdk\\aws-lambda\\lib\\code.js:225:26)",
+              "new Function (C:\\Users\\VISHALRS\\AppData\\Local\\Temp\\jsii-kernel-7oAUSy\\node_modules\\@aws-cdk\\aws-lambda\\lib\\function.js:95:33)",
+              "C:\\Users\\VISHALRS\\Documents\\coding\\realtime-anomaly-detection-aws\\.env\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:3556:49",
+              "Kernel._wrapSandboxCode (C:\\Users\\VISHALRS\\Documents\\coding\\realtime-anomaly-detection-aws\\.env\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:4040:16)",
+              "Kernel._create (C:\\Users\\VISHALRS\\Documents\\coding\\realtime-anomaly-detection-aws\\.env\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:3556:26)",
+              "Kernel.create (C:\\Users\\VISHALRS\\Documents\\coding\\realtime-anomaly-detection-aws\\.env\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:3300:21)",
+              "KernelHost.processRequest (C:\\Users\\VISHALRS\\Documents\\coding\\realtime-anomaly-detection-aws\\.env\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:13119:28)",
+              "KernelHost.run (C:\\Users\\VISHALRS\\Documents\\coding\\realtime-anomaly-detection-aws\\.env\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:13057:14)",
+              "Immediate._onImmediate (C:\\Users\\VISHALRS\\Documents\\coding\\realtime-anomaly-detection-aws\\.env\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:13060:37)",
+              "processImmediate (node:internal/timers:466:21)"
+            ]
+          }
+        ],
+        "/anomaly-detection-data-streams/outputBucket/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "outputBucket14BAE956",
+            "trace": [
+              "new Bucket (C:\\Users\\VISHALRS\\AppData\\Local\\Temp\\jsii-kernel-7oAUSy\\node_modules\\@aws-cdk\\aws-s3\\lib\\bucket.js:467:26)",
+              "C:\\Users\\VISHALRS\\Documents\\coding\\realtime-anomaly-detection-aws\\.env\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:3556:49",
+              "Kernel._wrapSandboxCode (C:\\Users\\VISHALRS\\Documents\\coding\\realtime-anomaly-detection-aws\\.env\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:4040:16)",
+              "Kernel._create (C:\\Users\\VISHALRS\\Documents\\coding\\realtime-anomaly-detection-aws\\.env\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:3556:26)",
+              "Kernel.create (C:\\Users\\VISHALRS\\Documents\\coding\\realtime-anomaly-detection-aws\\.env\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:3300:21)",
+              "KernelHost.processRequest (C:\\Users\\VISHALRS\\Documents\\coding\\realtime-anomaly-detection-aws\\.env\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:13119:28)",
+              "KernelHost.run (C:\\Users\\VISHALRS\\Documents\\coding\\realtime-anomaly-detection-aws\\.env\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:13057:14)",
+              "Immediate._onImmediate (C:\\Users\\VISHALRS\\Documents\\coding\\realtime-anomaly-detection-aws\\.env\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:13060:37)",
+              "processImmediate (node:internal/timers:466:21)"
+            ]
+          }
+        ],
+        "/anomaly-detection-data-streams/inputDataStream/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "inputDataStream02E8870B",
+            "trace": [
+              "new Stream (C:\\Users\\VISHALRS\\AppData\\Local\\Temp\\jsii-kernel-7oAUSy\\node_modules\\@aws-cdk\\aws-kinesis\\lib\\stream.js:105:23)",
+              "C:\\Users\\VISHALRS\\Documents\\coding\\realtime-anomaly-detection-aws\\.env\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:3556:49",
+              "Kernel._wrapSandboxCode (C:\\Users\\VISHALRS\\Documents\\coding\\realtime-anomaly-detection-aws\\.env\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:4040:16)",
+              "Kernel._create (C:\\Users\\VISHALRS\\Documents\\coding\\realtime-anomaly-detection-aws\\.env\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:3556:26)",
+              "Kernel.create (C:\\Users\\VISHALRS\\Documents\\coding\\realtime-anomaly-detection-aws\\.env\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:3300:21)",
+              "KernelHost.processRequest (C:\\Users\\VISHALRS\\Documents\\coding\\realtime-anomaly-detection-aws\\.env\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:13119:28)",
+              "KernelHost.run (C:\\Users\\VISHALRS\\Documents\\coding\\realtime-anomaly-detection-aws\\.env\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:13057:14)",
+              "Immediate._onImmediate (C:\\Users\\VISHALRS\\Documents\\coding\\realtime-anomaly-detection-aws\\.env\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:13060:37)",
+              "processImmediate (node:internal/timers:466:21)"
+            ]
+          }
+        ],
+        "/anomaly-detection-data-streams/AwsCdkKinesisEncryptedStreamsUnsupportedRegions": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AwsCdkKinesisEncryptedStreamsUnsupportedRegions",
+            "trace": [
+              "Stream.parseEncryption (C:\\Users\\VISHALRS\\AppData\\Local\\Temp\\jsii-kernel-7oAUSy\\node_modules\\@aws-cdk\\aws-kinesis\\lib\\stream.js:161:17)",
+              "new Stream (C:\\Users\\VISHALRS\\AppData\\Local\\Temp\\jsii-kernel-7oAUSy\\node_modules\\@aws-cdk\\aws-kinesis\\lib\\stream.js:104:58)",
+              "C:\\Users\\VISHALRS\\Documents\\coding\\realtime-anomaly-detection-aws\\.env\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:3556:49",
+              "Kernel._wrapSandboxCode (C:\\Users\\VISHALRS\\Documents\\coding\\realtime-anomaly-detection-aws\\.env\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:4040:16)",
+              "Kernel._create (C:\\Users\\VISHALRS\\Documents\\coding\\realtime-anomaly-detection-aws\\.env\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:3556:26)",
+              "Kernel.create (C:\\Users\\VISHALRS\\Documents\\coding\\realtime-anomaly-detection-aws\\.env\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:3300:21)",
+              "KernelHost.processRequest (C:\\Users\\VISHALRS\\Documents\\coding\\realtime-anomaly-detection-aws\\.env\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:13119:28)",
+              "KernelHost.run (C:\\Users\\VISHALRS\\Documents\\coding\\realtime-anomaly-detection-aws\\.env\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:13057:14)",
+              "Immediate._onImmediate (C:\\Users\\VISHALRS\\Documents\\coding\\realtime-anomaly-detection-aws\\.env\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:13060:37)",
+              "processImmediate (node:internal/timers:466:21)"
+            ]
+          }
+        ],
+        "/anomaly-detection-data-streams/deliveryStreamRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "deliveryStreamRoleB4288E26",
+            "trace": [
+              "new Role (C:\\Users\\VISHALRS\\AppData\\Local\\Temp\\jsii-kernel-7oAUSy\\node_modules\\@aws-cdk\\aws-iam\\lib\\role.js:70:22)",
+              "C:\\Users\\VISHALRS\\Documents\\coding\\realtime-anomaly-detection-aws\\.env\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:3556:49",
+              "Kernel._wrapSandboxCode (C:\\Users\\VISHALRS\\Documents\\coding\\realtime-anomaly-detection-aws\\.env\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:4040:16)",
+              "Kernel._create (C:\\Users\\VISHALRS\\Documents\\coding\\realtime-anomaly-detection-aws\\.env\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:3556:26)",
+              "Kernel.create (C:\\Users\\VISHALRS\\Documents\\coding\\realtime-anomaly-detection-aws\\.env\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:3300:21)",
+              "KernelHost.processRequest (C:\\Users\\VISHALRS\\Documents\\coding\\realtime-anomaly-detection-aws\\.env\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:13119:28)",
+              "KernelHost.run (C:\\Users\\VISHALRS\\Documents\\coding\\realtime-anomaly-detection-aws\\.env\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:13057:14)",
+              "Immediate._onImmediate (C:\\Users\\VISHALRS\\Documents\\coding\\realtime-anomaly-detection-aws\\.env\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:13060:37)",
+              "processImmediate (node:internal/timers:466:21)"
+            ]
+          }
+        ],
+        "/anomaly-detection-data-streams/deliveryStreamRole/DefaultPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "deliveryStreamRoleDefaultPolicyC9208632",
+            "trace": [
+              "new Policy (C:\\Users\\VISHALRS\\AppData\\Local\\Temp\\jsii-kernel-7oAUSy\\node_modules\\@aws-cdk\\aws-iam\\lib\\policy.js:53:26)",
+              "Role.addToPrincipalPolicy (C:\\Users\\VISHALRS\\AppData\\Local\\Temp\\jsii-kernel-7oAUSy\\node_modules\\@aws-cdk\\aws-iam\\lib\\role.js:203:34)",
+              "Function.addToPrincipal (C:\\Users\\VISHALRS\\AppData\\Local\\Temp\\jsii-kernel-7oAUSy\\node_modules\\@aws-cdk\\aws-iam\\lib\\grant.js:88:65)",
+              "Stream.grant (C:\\Users\\VISHALRS\\AppData\\Local\\Temp\\jsii-kernel-7oAUSy\\node_modules\\@aws-cdk\\aws-kinesis\\lib\\stream.js:73:26)",
+              "Stream.grantRead (C:\\Users\\VISHALRS\\AppData\\Local\\Temp\\jsii-kernel-7oAUSy\\node_modules\\@aws-cdk\\aws-kinesis\\lib\\stream.js:33:26)",
+              "C:\\Users\\VISHALRS\\Documents\\coding\\realtime-anomaly-detection-aws\\.env\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:3380:51",
+              "Kernel._wrapSandboxCode (C:\\Users\\VISHALRS\\Documents\\coding\\realtime-anomaly-detection-aws\\.env\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:4040:16)",
+              "C:\\Users\\VISHALRS\\Documents\\coding\\realtime-anomaly-detection-aws\\.env\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:3380:25",
+              "Kernel._ensureSync (C:\\Users\\VISHALRS\\Documents\\coding\\realtime-anomaly-detection-aws\\.env\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:4017:20)",
+              "Kernel.invoke (C:\\Users\\VISHALRS\\Documents\\coding\\realtime-anomaly-detection-aws\\.env\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:3379:26)",
+              "KernelHost.processRequest (C:\\Users\\VISHALRS\\Documents\\coding\\realtime-anomaly-detection-aws\\.env\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:13119:28)",
+              "KernelHost.run (C:\\Users\\VISHALRS\\Documents\\coding\\realtime-anomaly-detection-aws\\.env\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:13057:14)",
+              "Immediate._onImmediate (C:\\Users\\VISHALRS\\Documents\\coding\\realtime-anomaly-detection-aws\\.env\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:13060:37)",
+              "processImmediate (node:internal/timers:466:21)"
+            ]
+          }
+        ],
+        "/anomaly-detection-data-streams/anomalyDetectionTopic/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "anomalyDetectionTopic1A0E5948",
+            "trace": [
+              "new Topic (C:\\Users\\VISHALRS\\AppData\\Local\\Temp\\jsii-kernel-7oAUSy\\node_modules\\@aws-cdk\\aws-sns\\lib\\topic.js:28:26)",
+              "C:\\Users\\VISHALRS\\Documents\\coding\\realtime-anomaly-detection-aws\\.env\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:3556:49",
+              "Kernel._wrapSandboxCode (C:\\Users\\VISHALRS\\Documents\\coding\\realtime-anomaly-detection-aws\\.env\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:4040:16)",
+              "Kernel._create (C:\\Users\\VISHALRS\\Documents\\coding\\realtime-anomaly-detection-aws\\.env\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:3556:26)",
+              "Kernel.create (C:\\Users\\VISHALRS\\Documents\\coding\\realtime-anomaly-detection-aws\\.env\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:3300:21)",
+              "KernelHost.processRequest (C:\\Users\\VISHALRS\\Documents\\coding\\realtime-anomaly-detection-aws\\.env\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:13119:28)",
+              "KernelHost.run (C:\\Users\\VISHALRS\\Documents\\coding\\realtime-anomaly-detection-aws\\.env\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:13057:14)",
+              "Immediate._onImmediate (C:\\Users\\VISHALRS\\Documents\\coding\\realtime-anomaly-detection-aws\\.env\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:13060:37)",
+              "processImmediate (node:internal/timers:466:21)"
+            ]
+          }
+        ],
+        "/anomaly-detection-data-streams/dataProcessingFunction/ServiceRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "dataProcessingFunctionServiceRoleB2FCF3A6",
+            "trace": [
+              "new Role (C:\\Users\\VISHALRS\\AppData\\Local\\Temp\\jsii-kernel-7oAUSy\\node_modules\\@aws-cdk\\aws-iam\\lib\\role.js:70:22)",
+              "new Function (C:\\Users\\VISHALRS\\AppData\\Local\\Temp\\jsii-kernel-7oAUSy\\node_modules\\@aws-cdk\\aws-lambda\\lib\\function.js:77:35)",
+              "C:\\Users\\VISHALRS\\Documents\\coding\\realtime-anomaly-detection-aws\\.env\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:3556:49",
+              "Kernel._wrapSandboxCode (C:\\Users\\VISHALRS\\Documents\\coding\\realtime-anomaly-detection-aws\\.env\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:4040:16)",
+              "Kernel._create (C:\\Users\\VISHALRS\\Documents\\coding\\realtime-anomaly-detection-aws\\.env\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:3556:26)",
+              "Kernel.create (C:\\Users\\VISHALRS\\Documents\\coding\\realtime-anomaly-detection-aws\\.env\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:3300:21)",
+              "KernelHost.processRequest (C:\\Users\\VISHALRS\\Documents\\coding\\realtime-anomaly-detection-aws\\.env\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:13119:28)",
+              "KernelHost.run (C:\\Users\\VISHALRS\\Documents\\coding\\realtime-anomaly-detection-aws\\.env\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:13057:14)",
+              "Immediate._onImmediate (C:\\Users\\VISHALRS\\Documents\\coding\\realtime-anomaly-detection-aws\\.env\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:13060:37)",
+              "processImmediate (node:internal/timers:466:21)"
+            ]
+          }
+        ],
+        "/anomaly-detection-data-streams/dataProcessingFunction/ServiceRole/DefaultPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "dataProcessingFunctionServiceRoleDefaultPolicyA0E5FC4B",
+            "trace": [
+              "new Policy (C:\\Users\\VISHALRS\\AppData\\Local\\Temp\\jsii-kernel-7oAUSy\\node_modules\\@aws-cdk\\aws-iam\\lib\\policy.js:53:26)",
+              "Role.addToPrincipalPolicy (C:\\Users\\VISHALRS\\AppData\\Local\\Temp\\jsii-kernel-7oAUSy\\node_modules\\@aws-cdk\\aws-iam\\lib\\role.js:203:34)",
+              "Function.addToPrincipal (C:\\Users\\VISHALRS\\AppData\\Local\\Temp\\jsii-kernel-7oAUSy\\node_modules\\@aws-cdk\\aws-iam\\lib\\grant.js:88:65)",
+              "Function.addToPrincipalOrResource (C:\\Users\\VISHALRS\\AppData\\Local\\Temp\\jsii-kernel-7oAUSy\\node_modules\\@aws-cdk\\aws-iam\\lib\\grant.js:43:30)",
+              "Topic.grantPublish (C:\\Users\\VISHALRS\\AppData\\Local\\Temp\\jsii-kernel-7oAUSy\\node_modules\\@aws-cdk\\aws-sns\\lib\\topic-base.js:75:26)",
+              "C:\\Users\\VISHALRS\\Documents\\coding\\realtime-anomaly-detection-aws\\.env\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:3380:51",
+              "Kernel._wrapSandboxCode (C:\\Users\\VISHALRS\\Documents\\coding\\realtime-anomaly-detection-aws\\.env\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:4040:16)",
+              "C:\\Users\\VISHALRS\\Documents\\coding\\realtime-anomaly-detection-aws\\.env\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:3380:25",
+              "Kernel._ensureSync (C:\\Users\\VISHALRS\\Documents\\coding\\realtime-anomaly-detection-aws\\.env\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:4017:20)",
+              "Kernel.invoke (C:\\Users\\VISHALRS\\Documents\\coding\\realtime-anomaly-detection-aws\\.env\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:3379:26)",
+              "KernelHost.processRequest (C:\\Users\\VISHALRS\\Documents\\coding\\realtime-anomaly-detection-aws\\.env\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:13119:28)",
+              "KernelHost.run (C:\\Users\\VISHALRS\\Documents\\coding\\realtime-anomaly-detection-aws\\.env\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:13057:14)",
+              "Immediate._onImmediate (C:\\Users\\VISHALRS\\Documents\\coding\\realtime-anomaly-detection-aws\\.env\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:13060:37)",
+              "processImmediate (node:internal/timers:466:21)"
+            ]
+          }
+        ],
+        "/anomaly-detection-data-streams/dataProcessingFunction/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "dataProcessingFunctionDC0052C9",
+            "trace": [
+              "new Function (C:\\Users\\VISHALRS\\AppData\\Local\\Temp\\jsii-kernel-7oAUSy\\node_modules\\@aws-cdk\\aws-lambda\\lib\\function.js:127:26)",
+              "C:\\Users\\VISHALRS\\Documents\\coding\\realtime-anomaly-detection-aws\\.env\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:3556:49",
+              "Kernel._wrapSandboxCode (C:\\Users\\VISHALRS\\Documents\\coding\\realtime-anomaly-detection-aws\\.env\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:4040:16)",
+              "Kernel._create (C:\\Users\\VISHALRS\\Documents\\coding\\realtime-anomaly-detection-aws\\.env\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:3556:26)",
+              "Kernel.create (C:\\Users\\VISHALRS\\Documents\\coding\\realtime-anomaly-detection-aws\\.env\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:3300:21)",
+              "KernelHost.processRequest (C:\\Users\\VISHALRS\\Documents\\coding\\realtime-anomaly-detection-aws\\.env\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:13119:28)",
+              "KernelHost.run (C:\\Users\\VISHALRS\\Documents\\coding\\realtime-anomaly-detection-aws\\.env\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:13057:14)",
+              "Immediate._onImmediate (C:\\Users\\VISHALRS\\Documents\\coding\\realtime-anomaly-detection-aws\\.env\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:13060:37)",
+              "processImmediate (node:internal/timers:466:21)"
+            ]
+          }
+        ],
+        "/anomaly-detection-data-streams/AssetParameters/b9595d1e79bd0ecde7faa6c5c116ac3c209628eef58cad27e6140dfefe4be274/S3Bucket": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AssetParametersb9595d1e79bd0ecde7faa6c5c116ac3c209628eef58cad27e6140dfefe4be274S3Bucket3273C3D5",
+            "trace": [
+              "new FileAssetParameters (C:\\Users\\VISHALRS\\AppData\\Local\\Temp\\jsii-kernel-7oAUSy\\node_modules\\@aws-cdk\\core\\lib\\private\\asset-parameters.js:12:36)",
+              "LegacyStackSynthesizer.doAddFileAsset (C:\\Users\\VISHALRS\\AppData\\Local\\Temp\\jsii-kernel-7oAUSy\\node_modules\\@aws-cdk\\core\\lib\\stack-synthesizers\\legacy.js:157:22)",
+              "LegacyStackSynthesizer.addFileAsset (C:\\Users\\VISHALRS\\AppData\\Local\\Temp\\jsii-kernel-7oAUSy\\node_modules\\@aws-cdk\\core\\lib\\stack-synthesizers\\legacy.js:81:25)",
+              "Stack.addFileAsset (C:\\Users\\VISHALRS\\AppData\\Local\\Temp\\jsii-kernel-7oAUSy\\node_modules\\@aws-cdk\\core\\lib\\stack.js:398:33)",
+              "LegacyStackSynthesizer.addFileAsset (C:\\Users\\VISHALRS\\AppData\\Local\\Temp\\jsii-kernel-7oAUSy\\node_modules\\@aws-cdk\\core\\lib\\stack-synthesizers\\legacy.js:85:31)",
+              "new Asset (C:\\Users\\VISHALRS\\AppData\\Local\\Temp\\jsii-kernel-7oAUSy\\node_modules\\@aws-cdk\\aws-s3-assets\\lib\\asset.js:41:44)",
+              "AssetCode.bind (C:\\Users\\VISHALRS\\AppData\\Local\\Temp\\jsii-kernel-7oAUSy\\node_modules\\@aws-cdk\\aws-lambda\\lib\\code.js:225:26)",
+              "new Function (C:\\Users\\VISHALRS\\AppData\\Local\\Temp\\jsii-kernel-7oAUSy\\node_modules\\@aws-cdk\\aws-lambda\\lib\\function.js:95:33)",
+              "C:\\Users\\VISHALRS\\Documents\\coding\\realtime-anomaly-detection-aws\\.env\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:3556:49",
+              "Kernel._wrapSandboxCode (C:\\Users\\VISHALRS\\Documents\\coding\\realtime-anomaly-detection-aws\\.env\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:4040:16)",
+              "Kernel._create (C:\\Users\\VISHALRS\\Documents\\coding\\realtime-anomaly-detection-aws\\.env\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:3556:26)",
+              "Kernel.create (C:\\Users\\VISHALRS\\Documents\\coding\\realtime-anomaly-detection-aws\\.env\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:3300:21)",
+              "KernelHost.processRequest (C:\\Users\\VISHALRS\\Documents\\coding\\realtime-anomaly-detection-aws\\.env\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:13119:28)",
+              "KernelHost.run (C:\\Users\\VISHALRS\\Documents\\coding\\realtime-anomaly-detection-aws\\.env\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:13057:14)",
+              "Immediate._onImmediate (C:\\Users\\VISHALRS\\Documents\\coding\\realtime-anomaly-detection-aws\\.env\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:13060:37)",
+              "processImmediate (node:internal/timers:466:21)"
+            ]
+          }
+        ],
+        "/anomaly-detection-data-streams/AssetParameters/b9595d1e79bd0ecde7faa6c5c116ac3c209628eef58cad27e6140dfefe4be274/S3VersionKey": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AssetParametersb9595d1e79bd0ecde7faa6c5c116ac3c209628eef58cad27e6140dfefe4be274S3VersionKey5B7646EF",
+            "trace": [
+              "new FileAssetParameters (C:\\Users\\VISHALRS\\AppData\\Local\\Temp\\jsii-kernel-7oAUSy\\node_modules\\@aws-cdk\\core\\lib\\private\\asset-parameters.js:16:35)",
+              "LegacyStackSynthesizer.doAddFileAsset (C:\\Users\\VISHALRS\\AppData\\Local\\Temp\\jsii-kernel-7oAUSy\\node_modules\\@aws-cdk\\core\\lib\\stack-synthesizers\\legacy.js:157:22)",
+              "LegacyStackSynthesizer.addFileAsset (C:\\Users\\VISHALRS\\AppData\\Local\\Temp\\jsii-kernel-7oAUSy\\node_modules\\@aws-cdk\\core\\lib\\stack-synthesizers\\legacy.js:81:25)",
+              "Stack.addFileAsset (C:\\Users\\VISHALRS\\AppData\\Local\\Temp\\jsii-kernel-7oAUSy\\node_modules\\@aws-cdk\\core\\lib\\stack.js:398:33)",
+              "LegacyStackSynthesizer.addFileAsset (C:\\Users\\VISHALRS\\AppData\\Local\\Temp\\jsii-kernel-7oAUSy\\node_modules\\@aws-cdk\\core\\lib\\stack-synthesizers\\legacy.js:85:31)",
+              "new Asset (C:\\Users\\VISHALRS\\AppData\\Local\\Temp\\jsii-kernel-7oAUSy\\node_modules\\@aws-cdk\\aws-s3-assets\\lib\\asset.js:41:44)",
+              "AssetCode.bind (C:\\Users\\VISHALRS\\AppData\\Local\\Temp\\jsii-kernel-7oAUSy\\node_modules\\@aws-cdk\\aws-lambda\\lib\\code.js:225:26)",
+              "new Function (C:\\Users\\VISHALRS\\AppData\\Local\\Temp\\jsii-kernel-7oAUSy\\node_modules\\@aws-cdk\\aws-lambda\\lib\\function.js:95:33)",
+              "C:\\Users\\VISHALRS\\Documents\\coding\\realtime-anomaly-detection-aws\\.env\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:3556:49",
+              "Kernel._wrapSandboxCode (C:\\Users\\VISHALRS\\Documents\\coding\\realtime-anomaly-detection-aws\\.env\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:4040:16)",
+              "Kernel._create (C:\\Users\\VISHALRS\\Documents\\coding\\realtime-anomaly-detection-aws\\.env\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:3556:26)",
+              "Kernel.create (C:\\Users\\VISHALRS\\Documents\\coding\\realtime-anomaly-detection-aws\\.env\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:3300:21)",
+              "KernelHost.processRequest (C:\\Users\\VISHALRS\\Documents\\coding\\realtime-anomaly-detection-aws\\.env\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:13119:28)",
+              "KernelHost.run (C:\\Users\\VISHALRS\\Documents\\coding\\realtime-anomaly-detection-aws\\.env\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:13057:14)",
+              "Immediate._onImmediate (C:\\Users\\VISHALRS\\Documents\\coding\\realtime-anomaly-detection-aws\\.env\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:13060:37)",
+              "processImmediate (node:internal/timers:466:21)"
+            ]
+          }
+        ],
+        "/anomaly-detection-data-streams/AssetParameters/b9595d1e79bd0ecde7faa6c5c116ac3c209628eef58cad27e6140dfefe4be274/ArtifactHash": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AssetParametersb9595d1e79bd0ecde7faa6c5c116ac3c209628eef58cad27e6140dfefe4be274ArtifactHashE9EB9591",
+            "trace": [
+              "new FileAssetParameters (C:\\Users\\VISHALRS\\AppData\\Local\\Temp\\jsii-kernel-7oAUSy\\node_modules\\@aws-cdk\\core\\lib\\private\\asset-parameters.js:20:38)",
+              "LegacyStackSynthesizer.doAddFileAsset (C:\\Users\\VISHALRS\\AppData\\Local\\Temp\\jsii-kernel-7oAUSy\\node_modules\\@aws-cdk\\core\\lib\\stack-synthesizers\\legacy.js:157:22)",
+              "LegacyStackSynthesizer.addFileAsset (C:\\Users\\VISHALRS\\AppData\\Local\\Temp\\jsii-kernel-7oAUSy\\node_modules\\@aws-cdk\\core\\lib\\stack-synthesizers\\legacy.js:81:25)",
+              "Stack.addFileAsset (C:\\Users\\VISHALRS\\AppData\\Local\\Temp\\jsii-kernel-7oAUSy\\node_modules\\@aws-cdk\\core\\lib\\stack.js:398:33)",
+              "LegacyStackSynthesizer.addFileAsset (C:\\Users\\VISHALRS\\AppData\\Local\\Temp\\jsii-kernel-7oAUSy\\node_modules\\@aws-cdk\\core\\lib\\stack-synthesizers\\legacy.js:85:31)",
+              "new Asset (C:\\Users\\VISHALRS\\AppData\\Local\\Temp\\jsii-kernel-7oAUSy\\node_modules\\@aws-cdk\\aws-s3-assets\\lib\\asset.js:41:44)",
+              "AssetCode.bind (C:\\Users\\VISHALRS\\AppData\\Local\\Temp\\jsii-kernel-7oAUSy\\node_modules\\@aws-cdk\\aws-lambda\\lib\\code.js:225:26)",
+              "new Function (C:\\Users\\VISHALRS\\AppData\\Local\\Temp\\jsii-kernel-7oAUSy\\node_modules\\@aws-cdk\\aws-lambda\\lib\\function.js:95:33)",
+              "C:\\Users\\VISHALRS\\Documents\\coding\\realtime-anomaly-detection-aws\\.env\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:3556:49",
+              "Kernel._wrapSandboxCode (C:\\Users\\VISHALRS\\Documents\\coding\\realtime-anomaly-detection-aws\\.env\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:4040:16)",
+              "Kernel._create (C:\\Users\\VISHALRS\\Documents\\coding\\realtime-anomaly-detection-aws\\.env\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:3556:26)",
+              "Kernel.create (C:\\Users\\VISHALRS\\Documents\\coding\\realtime-anomaly-detection-aws\\.env\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:3300:21)",
+              "KernelHost.processRequest (C:\\Users\\VISHALRS\\Documents\\coding\\realtime-anomaly-detection-aws\\.env\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:13119:28)",
+              "KernelHost.run (C:\\Users\\VISHALRS\\Documents\\coding\\realtime-anomaly-detection-aws\\.env\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:13057:14)",
+              "Immediate._onImmediate (C:\\Users\\VISHALRS\\Documents\\coding\\realtime-anomaly-detection-aws\\.env\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:13060:37)",
+              "processImmediate (node:internal/timers:466:21)"
+            ]
+          }
+        ],
+        "/anomaly-detection-data-streams/deliveryStream": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "deliveryStream",
+            "trace": [
+              "C:\\Users\\VISHALRS\\Documents\\coding\\realtime-anomaly-detection-aws\\.env\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:3556:49",
+              "Kernel._wrapSandboxCode (C:\\Users\\VISHALRS\\Documents\\coding\\realtime-anomaly-detection-aws\\.env\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:4040:16)",
+              "Kernel._create (C:\\Users\\VISHALRS\\Documents\\coding\\realtime-anomaly-detection-aws\\.env\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:3556:26)",
+              "Kernel.create (C:\\Users\\VISHALRS\\Documents\\coding\\realtime-anomaly-detection-aws\\.env\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:3300:21)",
+              "KernelHost.processRequest (C:\\Users\\VISHALRS\\Documents\\coding\\realtime-anomaly-detection-aws\\.env\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:13119:28)",
+              "KernelHost.run (C:\\Users\\VISHALRS\\Documents\\coding\\realtime-anomaly-detection-aws\\.env\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:13057:14)",
+              "Immediate._onImmediate (C:\\Users\\VISHALRS\\Documents\\coding\\realtime-anomaly-detection-aws\\.env\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:13060:37)",
+              "processImmediate (node:internal/timers:466:21)"
+            ]
+          }
+        ],
+        "/anomaly-detection-data-streams/anomalieDetectionAppRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "anomalieDetectionAppRole16383D2A",
+            "trace": [
+              "new Role (C:\\Users\\VISHALRS\\AppData\\Local\\Temp\\jsii-kernel-7oAUSy\\node_modules\\@aws-cdk\\aws-iam\\lib\\role.js:70:22)",
+              "C:\\Users\\VISHALRS\\Documents\\coding\\realtime-anomaly-detection-aws\\.env\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:3556:49",
+              "Kernel._wrapSandboxCode (C:\\Users\\VISHALRS\\Documents\\coding\\realtime-anomaly-detection-aws\\.env\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:4040:16)",
+              "Kernel._create (C:\\Users\\VISHALRS\\Documents\\coding\\realtime-anomaly-detection-aws\\.env\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:3556:26)",
+              "Kernel.create (C:\\Users\\VISHALRS\\Documents\\coding\\realtime-anomaly-detection-aws\\.env\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:3300:21)",
+              "KernelHost.processRequest (C:\\Users\\VISHALRS\\Documents\\coding\\realtime-anomaly-detection-aws\\.env\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:13119:28)",
+              "KernelHost.run (C:\\Users\\VISHALRS\\Documents\\coding\\realtime-anomaly-detection-aws\\.env\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:13057:14)",
+              "Immediate._onImmediate (C:\\Users\\VISHALRS\\Documents\\coding\\realtime-anomaly-detection-aws\\.env\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:13060:37)",
+              "processImmediate (node:internal/timers:466:21)"
+            ]
+          }
+        ],
+        "/anomaly-detection-data-streams/anomalieDetectionApp": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "anomalieDetectionApp",
+            "trace": [
+              "C:\\Users\\VISHALRS\\Documents\\coding\\realtime-anomaly-detection-aws\\.env\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:3556:49",
+              "Kernel._wrapSandboxCode (C:\\Users\\VISHALRS\\Documents\\coding\\realtime-anomaly-detection-aws\\.env\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:4040:16)",
+              "Kernel._create (C:\\Users\\VISHALRS\\Documents\\coding\\realtime-anomaly-detection-aws\\.env\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:3556:26)",
+              "Kernel.create (C:\\Users\\VISHALRS\\Documents\\coding\\realtime-anomaly-detection-aws\\.env\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:3300:21)",
+              "KernelHost.processRequest (C:\\Users\\VISHALRS\\Documents\\coding\\realtime-anomaly-detection-aws\\.env\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:13119:28)",
+              "KernelHost.run (C:\\Users\\VISHALRS\\Documents\\coding\\realtime-anomaly-detection-aws\\.env\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:13057:14)",
+              "Immediate._onImmediate (C:\\Users\\VISHALRS\\Documents\\coding\\realtime-anomaly-detection-aws\\.env\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:13060:37)",
+              "processImmediate (node:internal/timers:466:21)"
+            ]
+          }
+        ],
+        "/anomaly-detection-data-streams/anomalieDetectionAppOutputLambda": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "anomalieDetectionAppOutputLambda",
+            "trace": [
+              "C:\\Users\\VISHALRS\\Documents\\coding\\realtime-anomaly-detection-aws\\.env\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:3556:49",
+              "Kernel._wrapSandboxCode (C:\\Users\\VISHALRS\\Documents\\coding\\realtime-anomaly-detection-aws\\.env\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:4040:16)",
+              "Kernel._create (C:\\Users\\VISHALRS\\Documents\\coding\\realtime-anomaly-detection-aws\\.env\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:3556:26)",
+              "Kernel.create (C:\\Users\\VISHALRS\\Documents\\coding\\realtime-anomaly-detection-aws\\.env\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:3300:21)",
+              "KernelHost.processRequest (C:\\Users\\VISHALRS\\Documents\\coding\\realtime-anomaly-detection-aws\\.env\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:13119:28)",
+              "KernelHost.run (C:\\Users\\VISHALRS\\Documents\\coding\\realtime-anomaly-detection-aws\\.env\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:13057:14)",
+              "Immediate._onImmediate (C:\\Users\\VISHALRS\\Documents\\coding\\realtime-anomaly-detection-aws\\.env\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:13060:37)",
+              "processImmediate (node:internal/timers:466:21)"
+            ]
+          }
+        ],
+        "/anomaly-detection-data-streams/VPC/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "VPCB9E5F0B4",
+            "trace": [
+              "new Vpc (C:\\Users\\VISHALRS\\AppData\\Local\\Temp\\jsii-kernel-7oAUSy\\node_modules\\@aws-cdk\\aws-ec2\\lib\\vpc.js:340:25)",
+              "C:\\Users\\VISHALRS\\Documents\\coding\\realtime-anomaly-detection-aws\\.env\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:3556:49",
+              "Kernel._wrapSandboxCode (C:\\Users\\VISHALRS\\Documents\\coding\\realtime-anomaly-detection-aws\\.env\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:4040:16)",
+              "Kernel._create (C:\\Users\\VISHALRS\\Documents\\coding\\realtime-anomaly-detection-aws\\.env\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:3556:26)",
+              "Kernel.create (C:\\Users\\VISHALRS\\Documents\\coding\\realtime-anomaly-detection-aws\\.env\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:3300:21)",
+              "KernelHost.processRequest (C:\\Users\\VISHALRS\\Documents\\coding\\realtime-anomaly-detection-aws\\.env\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:13119:28)",
+              "KernelHost.run (C:\\Users\\VISHALRS\\Documents\\coding\\realtime-anomaly-detection-aws\\.env\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:13057:14)",
+              "Immediate._onImmediate (C:\\Users\\VISHALRS\\Documents\\coding\\realtime-anomaly-detection-aws\\.env\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:13060:37)",
+              "processImmediate (node:internal/timers:466:21)"
+            ]
+          }
+        ],
+        "/anomaly-detection-data-streams/VPC/privateSubnet1/Subnet": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "VPCprivateSubnet1SubnetE522290D",
+            "trace": [
+              "new Subnet (C:\\Users\\VISHALRS\\AppData\\Local\\Temp\\jsii-kernel-7oAUSy\\node_modules\\@aws-cdk\\aws-ec2\\lib\\vpc.js:653:24)",
+              "new PrivateSubnet (C:\\Users\\VISHALRS\\AppData\\Local\\Temp\\jsii-kernel-7oAUSy\\node_modules\\@aws-cdk\\aws-ec2\\lib\\vpc.js:860:9)",
+              "C:\\Users\\VISHALRS\\AppData\\Local\\Temp\\jsii-kernel-7oAUSy\\node_modules\\@aws-cdk\\aws-ec2\\lib\\vpc.js:558:43",
+              "Array.forEach (<anonymous>)",
+              "Vpc.createSubnetResources (C:\\Users\\VISHALRS\\AppData\\Local\\Temp\\jsii-kernel-7oAUSy\\node_modules\\@aws-cdk\\aws-ec2\\lib\\vpc.js:537:32)",
+              "Vpc.createSubnets (C:\\Users\\VISHALRS\\AppData\\Local\\Temp\\jsii-kernel-7oAUSy\\node_modules\\@aws-cdk\\aws-ec2\\lib\\vpc.js:533:18)",
+              "new Vpc (C:\\Users\\VISHALRS\\AppData\\Local\\Temp\\jsii-kernel-7oAUSy\\node_modules\\@aws-cdk\\aws-ec2\\lib\\vpc.js:361:14)",
+              "C:\\Users\\VISHALRS\\Documents\\coding\\realtime-anomaly-detection-aws\\.env\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:3556:49",
+              "Kernel._wrapSandboxCode (C:\\Users\\VISHALRS\\Documents\\coding\\realtime-anomaly-detection-aws\\.env\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:4040:16)",
+              "Kernel._create (C:\\Users\\VISHALRS\\Documents\\coding\\realtime-anomaly-detection-aws\\.env\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:3556:26)",
+              "Kernel.create (C:\\Users\\VISHALRS\\Documents\\coding\\realtime-anomaly-detection-aws\\.env\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:3300:21)",
+              "KernelHost.processRequest (C:\\Users\\VISHALRS\\Documents\\coding\\realtime-anomaly-detection-aws\\.env\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:13119:28)",
+              "KernelHost.run (C:\\Users\\VISHALRS\\Documents\\coding\\realtime-anomaly-detection-aws\\.env\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:13057:14)",
+              "Immediate._onImmediate (C:\\Users\\VISHALRS\\Documents\\coding\\realtime-anomaly-detection-aws\\.env\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:13060:37)",
+              "processImmediate (node:internal/timers:466:21)"
+            ]
+          }
+        ],
+        "/anomaly-detection-data-streams/VPC/privateSubnet1/RouteTable": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "VPCprivateSubnet1RouteTable41566AF9",
+            "trace": [
+              "new Subnet (C:\\Users\\VISHALRS\\AppData\\Local\\Temp\\jsii-kernel-7oAUSy\\node_modules\\@aws-cdk\\aws-ec2\\lib\\vpc.js:669:23)",
+              "new PrivateSubnet (C:\\Users\\VISHALRS\\AppData\\Local\\Temp\\jsii-kernel-7oAUSy\\node_modules\\@aws-cdk\\aws-ec2\\lib\\vpc.js:860:9)",
+              "C:\\Users\\VISHALRS\\AppData\\Local\\Temp\\jsii-kernel-7oAUSy\\node_modules\\@aws-cdk\\aws-ec2\\lib\\vpc.js:558:43",
+              "Array.forEach (<anonymous>)",
+              "Vpc.createSubnetResources (C:\\Users\\VISHALRS\\AppData\\Local\\Temp\\jsii-kernel-7oAUSy\\node_modules\\@aws-cdk\\aws-ec2\\lib\\vpc.js:537:32)",
+              "Vpc.createSubnets (C:\\Users\\VISHALRS\\AppData\\Local\\Temp\\jsii-kernel-7oAUSy\\node_modules\\@aws-cdk\\aws-ec2\\lib\\vpc.js:533:18)",
+              "new Vpc (C:\\Users\\VISHALRS\\AppData\\Local\\Temp\\jsii-kernel-7oAUSy\\node_modules\\@aws-cdk\\aws-ec2\\lib\\vpc.js:361:14)",
+              "C:\\Users\\VISHALRS\\Documents\\coding\\realtime-anomaly-detection-aws\\.env\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:3556:49",
+              "Kernel._wrapSandboxCode (C:\\Users\\VISHALRS\\Documents\\coding\\realtime-anomaly-detection-aws\\.env\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:4040:16)",
+              "Kernel._create (C:\\Users\\VISHALRS\\Documents\\coding\\realtime-anomaly-detection-aws\\.env\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:3556:26)",
+              "Kernel.create (C:\\Users\\VISHALRS\\Documents\\coding\\realtime-anomaly-detection-aws\\.env\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:3300:21)",
+              "KernelHost.processRequest (C:\\Users\\VISHALRS\\Documents\\coding\\realtime-anomaly-detection-aws\\.env\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:13119:28)",
+              "KernelHost.run (C:\\Users\\VISHALRS\\Documents\\coding\\realtime-anomaly-detection-aws\\.env\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:13057:14)",
+              "Immediate._onImmediate (C:\\Users\\VISHALRS\\Documents\\coding\\realtime-anomaly-detection-aws\\.env\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:13060:37)",
+              "processImmediate (node:internal/timers:466:21)"
+            ]
+          }
+        ],
+        "/anomaly-detection-data-streams/VPC/privateSubnet1/RouteTableAssociation": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "VPCprivateSubnet1RouteTableAssociation43FE0C59",
+            "trace": [
+              "new Subnet (C:\\Users\\VISHALRS\\AppData\\Local\\Temp\\jsii-kernel-7oAUSy\\node_modules\\@aws-cdk\\aws-ec2\\lib\\vpc.js:674:9)",
+              "new PrivateSubnet (C:\\Users\\VISHALRS\\AppData\\Local\\Temp\\jsii-kernel-7oAUSy\\node_modules\\@aws-cdk\\aws-ec2\\lib\\vpc.js:860:9)",
+              "C:\\Users\\VISHALRS\\AppData\\Local\\Temp\\jsii-kernel-7oAUSy\\node_modules\\@aws-cdk\\aws-ec2\\lib\\vpc.js:558:43",
+              "Array.forEach (<anonymous>)",
+              "Vpc.createSubnetResources (C:\\Users\\VISHALRS\\AppData\\Local\\Temp\\jsii-kernel-7oAUSy\\node_modules\\@aws-cdk\\aws-ec2\\lib\\vpc.js:537:32)",
+              "Vpc.createSubnets (C:\\Users\\VISHALRS\\AppData\\Local\\Temp\\jsii-kernel-7oAUSy\\node_modules\\@aws-cdk\\aws-ec2\\lib\\vpc.js:533:18)",
+              "new Vpc (C:\\Users\\VISHALRS\\AppData\\Local\\Temp\\jsii-kernel-7oAUSy\\node_modules\\@aws-cdk\\aws-ec2\\lib\\vpc.js:361:14)",
+              "C:\\Users\\VISHALRS\\Documents\\coding\\realtime-anomaly-detection-aws\\.env\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:3556:49",
+              "Kernel._wrapSandboxCode (C:\\Users\\VISHALRS\\Documents\\coding\\realtime-anomaly-detection-aws\\.env\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:4040:16)",
+              "Kernel._create (C:\\Users\\VISHALRS\\Documents\\coding\\realtime-anomaly-detection-aws\\.env\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:3556:26)",
+              "Kernel.create (C:\\Users\\VISHALRS\\Documents\\coding\\realtime-anomaly-detection-aws\\.env\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:3300:21)",
+              "KernelHost.processRequest (C:\\Users\\VISHALRS\\Documents\\coding\\realtime-anomaly-detection-aws\\.env\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:13119:28)",
+              "KernelHost.run (C:\\Users\\VISHALRS\\Documents\\coding\\realtime-anomaly-detection-aws\\.env\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:13057:14)",
+              "Immediate._onImmediate (C:\\Users\\VISHALRS\\Documents\\coding\\realtime-anomaly-detection-aws\\.env\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:13060:37)",
+              "processImmediate (node:internal/timers:466:21)"
+            ]
+          }
+        ],
+        "/anomaly-detection-data-streams/VPC/privateSubnet1/DefaultRoute": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "VPCprivateSubnet1DefaultRoute68B79172",
+            "trace": [
+              "PrivateSubnet.addRoute (C:\\Users\\VISHALRS\\AppData\\Local\\Temp\\jsii-kernel-7oAUSy\\node_modules\\@aws-cdk\\aws-ec2\\lib\\vpc.js:756:23)",
+              "NatGatewayProvider.configureSubnet (C:\\Users\\VISHALRS\\AppData\\Local\\Temp\\jsii-kernel-7oAUSy\\node_modules\\@aws-cdk\\aws-ec2\\lib\\nat.js:70:16)",
+              "NatGatewayProvider.configureNat (C:\\Users\\VISHALRS\\AppData\\Local\\Temp\\jsii-kernel-7oAUSy\\node_modules\\@aws-cdk\\aws-ec2\\lib\\nat.js:64:18)",
+              "Vpc.createNatGateways (C:\\Users\\VISHALRS\\AppData\\Local\\Temp\\jsii-kernel-7oAUSy\\node_modules\\@aws-cdk\\aws-ec2\\lib\\vpc.js:511:18)",
+              "new Vpc (C:\\Users\\VISHALRS\\AppData\\Local\\Temp\\jsii-kernel-7oAUSy\\node_modules\\@aws-cdk\\aws-ec2\\lib\\vpc.js:378:22)",
+              "C:\\Users\\VISHALRS\\Documents\\coding\\realtime-anomaly-detection-aws\\.env\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:3556:49",
+              "Kernel._wrapSandboxCode (C:\\Users\\VISHALRS\\Documents\\coding\\realtime-anomaly-detection-aws\\.env\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:4040:16)",
+              "Kernel._create (C:\\Users\\VISHALRS\\Documents\\coding\\realtime-anomaly-detection-aws\\.env\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:3556:26)",
+              "Kernel.create (C:\\Users\\VISHALRS\\Documents\\coding\\realtime-anomaly-detection-aws\\.env\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:3300:21)",
+              "KernelHost.processRequest (C:\\Users\\VISHALRS\\Documents\\coding\\realtime-anomaly-detection-aws\\.env\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:13119:28)",
+              "KernelHost.run (C:\\Users\\VISHALRS\\Documents\\coding\\realtime-anomaly-detection-aws\\.env\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:13057:14)",
+              "Immediate._onImmediate (C:\\Users\\VISHALRS\\Documents\\coding\\realtime-anomaly-detection-aws\\.env\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:13060:37)",
+              "processImmediate (node:internal/timers:466:21)"
+            ]
+          }
+        ],
+        "/anomaly-detection-data-streams/VPC/privateSubnet2/Subnet": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "VPCprivateSubnet2Subnet2F4D9530",
+            "trace": [
+              "new Subnet (C:\\Users\\VISHALRS\\AppData\\Local\\Temp\\jsii-kernel-7oAUSy\\node_modules\\@aws-cdk\\aws-ec2\\lib\\vpc.js:653:24)",
+              "new PrivateSubnet (C:\\Users\\VISHALRS\\AppData\\Local\\Temp\\jsii-kernel-7oAUSy\\node_modules\\@aws-cdk\\aws-ec2\\lib\\vpc.js:860:9)",
+              "C:\\Users\\VISHALRS\\AppData\\Local\\Temp\\jsii-kernel-7oAUSy\\node_modules\\@aws-cdk\\aws-ec2\\lib\\vpc.js:558:43",
+              "Array.forEach (<anonymous>)",
+              "Vpc.createSubnetResources (C:\\Users\\VISHALRS\\AppData\\Local\\Temp\\jsii-kernel-7oAUSy\\node_modules\\@aws-cdk\\aws-ec2\\lib\\vpc.js:537:32)",
+              "Vpc.createSubnets (C:\\Users\\VISHALRS\\AppData\\Local\\Temp\\jsii-kernel-7oAUSy\\node_modules\\@aws-cdk\\aws-ec2\\lib\\vpc.js:533:18)",
+              "new Vpc (C:\\Users\\VISHALRS\\AppData\\Local\\Temp\\jsii-kernel-7oAUSy\\node_modules\\@aws-cdk\\aws-ec2\\lib\\vpc.js:361:14)",
+              "C:\\Users\\VISHALRS\\Documents\\coding\\realtime-anomaly-detection-aws\\.env\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:3556:49",
+              "Kernel._wrapSandboxCode (C:\\Users\\VISHALRS\\Documents\\coding\\realtime-anomaly-detection-aws\\.env\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:4040:16)",
+              "Kernel._create (C:\\Users\\VISHALRS\\Documents\\coding\\realtime-anomaly-detection-aws\\.env\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:3556:26)",
+              "Kernel.create (C:\\Users\\VISHALRS\\Documents\\coding\\realtime-anomaly-detection-aws\\.env\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:3300:21)",
+              "KernelHost.processRequest (C:\\Users\\VISHALRS\\Documents\\coding\\realtime-anomaly-detection-aws\\.env\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:13119:28)",
+              "KernelHost.run (C:\\Users\\VISHALRS\\Documents\\coding\\realtime-anomaly-detection-aws\\.env\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:13057:14)",
+              "Immediate._onImmediate (C:\\Users\\VISHALRS\\Documents\\coding\\realtime-anomaly-detection-aws\\.env\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:13060:37)",
+              "processImmediate (node:internal/timers:466:21)"
+            ]
+          }
+        ],
+        "/anomaly-detection-data-streams/VPC/privateSubnet2/RouteTable": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "VPCprivateSubnet2RouteTableBBE8BB2B",
+            "trace": [
+              "new Subnet (C:\\Users\\VISHALRS\\AppData\\Local\\Temp\\jsii-kernel-7oAUSy\\node_modules\\@aws-cdk\\aws-ec2\\lib\\vpc.js:669:23)",
+              "new PrivateSubnet (C:\\Users\\VISHALRS\\AppData\\Local\\Temp\\jsii-kernel-7oAUSy\\node_modules\\@aws-cdk\\aws-ec2\\lib\\vpc.js:860:9)",
+              "C:\\Users\\VISHALRS\\AppData\\Local\\Temp\\jsii-kernel-7oAUSy\\node_modules\\@aws-cdk\\aws-ec2\\lib\\vpc.js:558:43",
+              "Array.forEach (<anonymous>)",
+              "Vpc.createSubnetResources (C:\\Users\\VISHALRS\\AppData\\Local\\Temp\\jsii-kernel-7oAUSy\\node_modules\\@aws-cdk\\aws-ec2\\lib\\vpc.js:537:32)",
+              "Vpc.createSubnets (C:\\Users\\VISHALRS\\AppData\\Local\\Temp\\jsii-kernel-7oAUSy\\node_modules\\@aws-cdk\\aws-ec2\\lib\\vpc.js:533:18)",
+              "new Vpc (C:\\Users\\VISHALRS\\AppData\\Local\\Temp\\jsii-kernel-7oAUSy\\node_modules\\@aws-cdk\\aws-ec2\\lib\\vpc.js:361:14)",
+              "C:\\Users\\VISHALRS\\Documents\\coding\\realtime-anomaly-detection-aws\\.env\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:3556:49",
+              "Kernel._wrapSandboxCode (C:\\Users\\VISHALRS\\Documents\\coding\\realtime-anomaly-detection-aws\\.env\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:4040:16)",
+              "Kernel._create (C:\\Users\\VISHALRS\\Documents\\coding\\realtime-anomaly-detection-aws\\.env\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:3556:26)",
+              "Kernel.create (C:\\Users\\VISHALRS\\Documents\\coding\\realtime-anomaly-detection-aws\\.env\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:3300:21)",
+              "KernelHost.processRequest (C:\\Users\\VISHALRS\\Documents\\coding\\realtime-anomaly-detection-aws\\.env\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:13119:28)",
+              "KernelHost.run (C:\\Users\\VISHALRS\\Documents\\coding\\realtime-anomaly-detection-aws\\.env\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:13057:14)",
+              "Immediate._onImmediate (C:\\Users\\VISHALRS\\Documents\\coding\\realtime-anomaly-detection-aws\\.env\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:13060:37)",
+              "processImmediate (node:internal/timers:466:21)"
+            ]
+          }
+        ],
+        "/anomaly-detection-data-streams/VPC/privateSubnet2/RouteTableAssociation": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "VPCprivateSubnet2RouteTableAssociation45BBC356",
+            "trace": [
+              "new Subnet (C:\\Users\\VISHALRS\\AppData\\Local\\Temp\\jsii-kernel-7oAUSy\\node_modules\\@aws-cdk\\aws-ec2\\lib\\vpc.js:674:9)",
+              "new PrivateSubnet (C:\\Users\\VISHALRS\\AppData\\Local\\Temp\\jsii-kernel-7oAUSy\\node_modules\\@aws-cdk\\aws-ec2\\lib\\vpc.js:860:9)",
+              "C:\\Users\\VISHALRS\\AppData\\Local\\Temp\\jsii-kernel-7oAUSy\\node_modules\\@aws-cdk\\aws-ec2\\lib\\vpc.js:558:43",
+              "Array.forEach (<anonymous>)",
+              "Vpc.createSubnetResources (C:\\Users\\VISHALRS\\AppData\\Local\\Temp\\jsii-kernel-7oAUSy\\node_modules\\@aws-cdk\\aws-ec2\\lib\\vpc.js:537:32)",
+              "Vpc.createSubnets (C:\\Users\\VISHALRS\\AppData\\Local\\Temp\\jsii-kernel-7oAUSy\\node_modules\\@aws-cdk\\aws-ec2\\lib\\vpc.js:533:18)",
+              "new Vpc (C:\\Users\\VISHALRS\\AppData\\Local\\Temp\\jsii-kernel-7oAUSy\\node_modules\\@aws-cdk\\aws-ec2\\lib\\vpc.js:361:14)",
+              "C:\\Users\\VISHALRS\\Documents\\coding\\realtime-anomaly-detection-aws\\.env\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:3556:49",
+              "Kernel._wrapSandboxCode (C:\\Users\\VISHALRS\\Documents\\coding\\realtime-anomaly-detection-aws\\.env\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:4040:16)",
+              "Kernel._create (C:\\Users\\VISHALRS\\Documents\\coding\\realtime-anomaly-detection-aws\\.env\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:3556:26)",
+              "Kernel.create (C:\\Users\\VISHALRS\\Documents\\coding\\realtime-anomaly-detection-aws\\.env\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:3300:21)",
+              "KernelHost.processRequest (C:\\Users\\VISHALRS\\Documents\\coding\\realtime-anomaly-detection-aws\\.env\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:13119:28)",
+              "KernelHost.run (C:\\Users\\VISHALRS\\Documents\\coding\\realtime-anomaly-detection-aws\\.env\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:13057:14)",
+              "Immediate._onImmediate (C:\\Users\\VISHALRS\\Documents\\coding\\realtime-anomaly-detection-aws\\.env\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:13060:37)",
+              "processImmediate (node:internal/timers:466:21)"
+            ]
+          }
+        ],
+        "/anomaly-detection-data-streams/VPC/privateSubnet2/DefaultRoute": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "VPCprivateSubnet2DefaultRouteD808B206",
+            "trace": [
+              "PrivateSubnet.addRoute (C:\\Users\\VISHALRS\\AppData\\Local\\Temp\\jsii-kernel-7oAUSy\\node_modules\\@aws-cdk\\aws-ec2\\lib\\vpc.js:756:23)",
+              "NatGatewayProvider.configureSubnet (C:\\Users\\VISHALRS\\AppData\\Local\\Temp\\jsii-kernel-7oAUSy\\node_modules\\@aws-cdk\\aws-ec2\\lib\\nat.js:70:16)",
+              "NatGatewayProvider.configureNat (C:\\Users\\VISHALRS\\AppData\\Local\\Temp\\jsii-kernel-7oAUSy\\node_modules\\@aws-cdk\\aws-ec2\\lib\\nat.js:64:18)",
+              "Vpc.createNatGateways (C:\\Users\\VISHALRS\\AppData\\Local\\Temp\\jsii-kernel-7oAUSy\\node_modules\\@aws-cdk\\aws-ec2\\lib\\vpc.js:511:18)",
+              "new Vpc (C:\\Users\\VISHALRS\\AppData\\Local\\Temp\\jsii-kernel-7oAUSy\\node_modules\\@aws-cdk\\aws-ec2\\lib\\vpc.js:378:22)",
+              "C:\\Users\\VISHALRS\\Documents\\coding\\realtime-anomaly-detection-aws\\.env\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:3556:49",
+              "Kernel._wrapSandboxCode (C:\\Users\\VISHALRS\\Documents\\coding\\realtime-anomaly-detection-aws\\.env\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:4040:16)",
+              "Kernel._create (C:\\Users\\VISHALRS\\Documents\\coding\\realtime-anomaly-detection-aws\\.env\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:3556:26)",
+              "Kernel.create (C:\\Users\\VISHALRS\\Documents\\coding\\realtime-anomaly-detection-aws\\.env\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:3300:21)",
+              "KernelHost.processRequest (C:\\Users\\VISHALRS\\Documents\\coding\\realtime-anomaly-detection-aws\\.env\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:13119:28)",
+              "KernelHost.run (C:\\Users\\VISHALRS\\Documents\\coding\\realtime-anomaly-detection-aws\\.env\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:13057:14)",
+              "Immediate._onImmediate (C:\\Users\\VISHALRS\\Documents\\coding\\realtime-anomaly-detection-aws\\.env\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:13060:37)",
+              "processImmediate (node:internal/timers:466:21)"
+            ]
+          }
+        ],
+        "/anomaly-detection-data-streams/VPC/publicSubnet1/Subnet": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "VPCpublicSubnet1Subnet325F50B2",
+            "trace": [
+              "new Subnet (C:\\Users\\VISHALRS\\AppData\\Local\\Temp\\jsii-kernel-7oAUSy\\node_modules\\@aws-cdk\\aws-ec2\\lib\\vpc.js:653:24)",
+              "new PublicSubnet (C:\\Users\\VISHALRS\\AppData\\Local\\Temp\\jsii-kernel-7oAUSy\\node_modules\\@aws-cdk\\aws-ec2\\lib\\vpc.js:822:9)",
+              "C:\\Users\\VISHALRS\\AppData\\Local\\Temp\\jsii-kernel-7oAUSy\\node_modules\\@aws-cdk\\aws-ec2\\lib\\vpc.js:553:42",
+              "Array.forEach (<anonymous>)",
+              "Vpc.createSubnetResources (C:\\Users\\VISHALRS\\AppData\\Local\\Temp\\jsii-kernel-7oAUSy\\node_modules\\@aws-cdk\\aws-ec2\\lib\\vpc.js:537:32)",
+              "Vpc.createSubnets (C:\\Users\\VISHALRS\\AppData\\Local\\Temp\\jsii-kernel-7oAUSy\\node_modules\\@aws-cdk\\aws-ec2\\lib\\vpc.js:533:18)",
+              "new Vpc (C:\\Users\\VISHALRS\\AppData\\Local\\Temp\\jsii-kernel-7oAUSy\\node_modules\\@aws-cdk\\aws-ec2\\lib\\vpc.js:361:14)",
+              "C:\\Users\\VISHALRS\\Documents\\coding\\realtime-anomaly-detection-aws\\.env\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:3556:49",
+              "Kernel._wrapSandboxCode (C:\\Users\\VISHALRS\\Documents\\coding\\realtime-anomaly-detection-aws\\.env\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:4040:16)",
+              "Kernel._create (C:\\Users\\VISHALRS\\Documents\\coding\\realtime-anomaly-detection-aws\\.env\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:3556:26)",
+              "Kernel.create (C:\\Users\\VISHALRS\\Documents\\coding\\realtime-anomaly-detection-aws\\.env\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:3300:21)",
+              "KernelHost.processRequest (C:\\Users\\VISHALRS\\Documents\\coding\\realtime-anomaly-detection-aws\\.env\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:13119:28)",
+              "KernelHost.run (C:\\Users\\VISHALRS\\Documents\\coding\\realtime-anomaly-detection-aws\\.env\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:13057:14)",
+              "Immediate._onImmediate (C:\\Users\\VISHALRS\\Documents\\coding\\realtime-anomaly-detection-aws\\.env\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:13060:37)",
+              "processImmediate (node:internal/timers:466:21)"
+            ]
+          }
+        ],
+        "/anomaly-detection-data-streams/VPC/publicSubnet1/RouteTable": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "VPCpublicSubnet1RouteTableF591E248",
+            "trace": [
+              "new Subnet (C:\\Users\\VISHALRS\\AppData\\Local\\Temp\\jsii-kernel-7oAUSy\\node_modules\\@aws-cdk\\aws-ec2\\lib\\vpc.js:669:23)",
+              "new PublicSubnet (C:\\Users\\VISHALRS\\AppData\\Local\\Temp\\jsii-kernel-7oAUSy\\node_modules\\@aws-cdk\\aws-ec2\\lib\\vpc.js:822:9)",
+              "C:\\Users\\VISHALRS\\AppData\\Local\\Temp\\jsii-kernel-7oAUSy\\node_modules\\@aws-cdk\\aws-ec2\\lib\\vpc.js:553:42",
+              "Array.forEach (<anonymous>)",
+              "Vpc.createSubnetResources (C:\\Users\\VISHALRS\\AppData\\Local\\Temp\\jsii-kernel-7oAUSy\\node_modules\\@aws-cdk\\aws-ec2\\lib\\vpc.js:537:32)",
+              "Vpc.createSubnets (C:\\Users\\VISHALRS\\AppData\\Local\\Temp\\jsii-kernel-7oAUSy\\node_modules\\@aws-cdk\\aws-ec2\\lib\\vpc.js:533:18)",
+              "new Vpc (C:\\Users\\VISHALRS\\AppData\\Local\\Temp\\jsii-kernel-7oAUSy\\node_modules\\@aws-cdk\\aws-ec2\\lib\\vpc.js:361:14)",
+              "C:\\Users\\VISHALRS\\Documents\\coding\\realtime-anomaly-detection-aws\\.env\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:3556:49",
+              "Kernel._wrapSandboxCode (C:\\Users\\VISHALRS\\Documents\\coding\\realtime-anomaly-detection-aws\\.env\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:4040:16)",
+              "Kernel._create (C:\\Users\\VISHALRS\\Documents\\coding\\realtime-anomaly-detection-aws\\.env\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:3556:26)",
+              "Kernel.create (C:\\Users\\VISHALRS\\Documents\\coding\\realtime-anomaly-detection-aws\\.env\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:3300:21)",
+              "KernelHost.processRequest (C:\\Users\\VISHALRS\\Documents\\coding\\realtime-anomaly-detection-aws\\.env\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:13119:28)",
+              "KernelHost.run (C:\\Users\\VISHALRS\\Documents\\coding\\realtime-anomaly-detection-aws\\.env\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:13057:14)",
+              "Immediate._onImmediate (C:\\Users\\VISHALRS\\Documents\\coding\\realtime-anomaly-detection-aws\\.env\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:13060:37)",
+              "processImmediate (node:internal/timers:466:21)"
+            ]
+          }
+        ],
+        "/anomaly-detection-data-streams/VPC/publicSubnet1/RouteTableAssociation": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "VPCpublicSubnet1RouteTableAssociationBFFA43B7",
+            "trace": [
+              "new Subnet (C:\\Users\\VISHALRS\\AppData\\Local\\Temp\\jsii-kernel-7oAUSy\\node_modules\\@aws-cdk\\aws-ec2\\lib\\vpc.js:674:9)",
+              "new PublicSubnet (C:\\Users\\VISHALRS\\AppData\\Local\\Temp\\jsii-kernel-7oAUSy\\node_modules\\@aws-cdk\\aws-ec2\\lib\\vpc.js:822:9)",
+              "C:\\Users\\VISHALRS\\AppData\\Local\\Temp\\jsii-kernel-7oAUSy\\node_modules\\@aws-cdk\\aws-ec2\\lib\\vpc.js:553:42",
+              "Array.forEach (<anonymous>)",
+              "Vpc.createSubnetResources (C:\\Users\\VISHALRS\\AppData\\Local\\Temp\\jsii-kernel-7oAUSy\\node_modules\\@aws-cdk\\aws-ec2\\lib\\vpc.js:537:32)",
+              "Vpc.createSubnets (C:\\Users\\VISHALRS\\AppData\\Local\\Temp\\jsii-kernel-7oAUSy\\node_modules\\@aws-cdk\\aws-ec2\\lib\\vpc.js:533:18)",
+              "new Vpc (C:\\Users\\VISHALRS\\AppData\\Local\\Temp\\jsii-kernel-7oAUSy\\node_modules\\@aws-cdk\\aws-ec2\\lib\\vpc.js:361:14)",
+              "C:\\Users\\VISHALRS\\Documents\\coding\\realtime-anomaly-detection-aws\\.env\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:3556:49",
+              "Kernel._wrapSandboxCode (C:\\Users\\VISHALRS\\Documents\\coding\\realtime-anomaly-detection-aws\\.env\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:4040:16)",
+              "Kernel._create (C:\\Users\\VISHALRS\\Documents\\coding\\realtime-anomaly-detection-aws\\.env\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:3556:26)",
+              "Kernel.create (C:\\Users\\VISHALRS\\Documents\\coding\\realtime-anomaly-detection-aws\\.env\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:3300:21)",
+              "KernelHost.processRequest (C:\\Users\\VISHALRS\\Documents\\coding\\realtime-anomaly-detection-aws\\.env\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:13119:28)",
+              "KernelHost.run (C:\\Users\\VISHALRS\\Documents\\coding\\realtime-anomaly-detection-aws\\.env\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:13057:14)",
+              "Immediate._onImmediate (C:\\Users\\VISHALRS\\Documents\\coding\\realtime-anomaly-detection-aws\\.env\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:13060:37)",
+              "processImmediate (node:internal/timers:466:21)"
+            ]
+          }
+        ],
+        "/anomaly-detection-data-streams/VPC/publicSubnet1/DefaultRoute": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "VPCpublicSubnet1DefaultRoute19059ECD",
+            "trace": [
+              "PublicSubnet.addDefaultInternetRoute (C:\\Users\\VISHALRS\\AppData\\Local\\Temp\\jsii-kernel-7oAUSy\\node_modules\\@aws-cdk\\aws-ec2\\lib\\vpc.js:709:23)",
+              "C:\\Users\\VISHALRS\\AppData\\Local\\Temp\\jsii-kernel-7oAUSy\\node_modules\\@aws-cdk\\aws-ec2\\lib\\vpc.js:373:30",
+              "Array.forEach (<anonymous>)",
+              "new Vpc (C:\\Users\\VISHALRS\\AppData\\Local\\Temp\\jsii-kernel-7oAUSy\\node_modules\\@aws-cdk\\aws-ec2\\lib\\vpc.js:372:32)",
+              "C:\\Users\\VISHALRS\\Documents\\coding\\realtime-anomaly-detection-aws\\.env\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:3556:49",
+              "Kernel._wrapSandboxCode (C:\\Users\\VISHALRS\\Documents\\coding\\realtime-anomaly-detection-aws\\.env\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:4040:16)",
+              "Kernel._create (C:\\Users\\VISHALRS\\Documents\\coding\\realtime-anomaly-detection-aws\\.env\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:3556:26)",
+              "Kernel.create (C:\\Users\\VISHALRS\\Documents\\coding\\realtime-anomaly-detection-aws\\.env\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:3300:21)",
+              "KernelHost.processRequest (C:\\Users\\VISHALRS\\Documents\\coding\\realtime-anomaly-detection-aws\\.env\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:13119:28)",
+              "KernelHost.run (C:\\Users\\VISHALRS\\Documents\\coding\\realtime-anomaly-detection-aws\\.env\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:13057:14)",
+              "Immediate._onImmediate (C:\\Users\\VISHALRS\\Documents\\coding\\realtime-anomaly-detection-aws\\.env\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:13060:37)",
+              "processImmediate (node:internal/timers:466:21)"
+            ]
+          }
+        ],
+        "/anomaly-detection-data-streams/VPC/publicSubnet1/EIP": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "VPCpublicSubnet1EIP2D50A06D",
+            "trace": [
+              "PublicSubnet.addNatGateway (C:\\Users\\VISHALRS\\AppData\\Local\\Temp\\jsii-kernel-7oAUSy\\node_modules\\@aws-cdk\\aws-ec2\\lib\\vpc.js:836:27)",
+              "NatGatewayProvider.configureNat (C:\\Users\\VISHALRS\\AppData\\Local\\Temp\\jsii-kernel-7oAUSy\\node_modules\\@aws-cdk\\aws-ec2\\lib\\nat.js:59:33)",
+              "Vpc.createNatGateways (C:\\Users\\VISHALRS\\AppData\\Local\\Temp\\jsii-kernel-7oAUSy\\node_modules\\@aws-cdk\\aws-ec2\\lib\\vpc.js:511:18)",
+              "new Vpc (C:\\Users\\VISHALRS\\AppData\\Local\\Temp\\jsii-kernel-7oAUSy\\node_modules\\@aws-cdk\\aws-ec2\\lib\\vpc.js:378:22)",
+              "C:\\Users\\VISHALRS\\Documents\\coding\\realtime-anomaly-detection-aws\\.env\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:3556:49",
+              "Kernel._wrapSandboxCode (C:\\Users\\VISHALRS\\Documents\\coding\\realtime-anomaly-detection-aws\\.env\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:4040:16)",
+              "Kernel._create (C:\\Users\\VISHALRS\\Documents\\coding\\realtime-anomaly-detection-aws\\.env\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:3556:26)",
+              "Kernel.create (C:\\Users\\VISHALRS\\Documents\\coding\\realtime-anomaly-detection-aws\\.env\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:3300:21)",
+              "KernelHost.processRequest (C:\\Users\\VISHALRS\\Documents\\coding\\realtime-anomaly-detection-aws\\.env\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:13119:28)",
+              "KernelHost.run (C:\\Users\\VISHALRS\\Documents\\coding\\realtime-anomaly-detection-aws\\.env\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:13057:14)",
+              "Immediate._onImmediate (C:\\Users\\VISHALRS\\Documents\\coding\\realtime-anomaly-detection-aws\\.env\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:13060:37)",
+              "processImmediate (node:internal/timers:466:21)"
+            ]
+          }
+        ],
+        "/anomaly-detection-data-streams/VPC/publicSubnet1/NATGateway": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "VPCpublicSubnet1NATGatewayEEDEB5A1",
+            "trace": [
+              "PublicSubnet.addNatGateway (C:\\Users\\VISHALRS\\AppData\\Local\\Temp\\jsii-kernel-7oAUSy\\node_modules\\@aws-cdk\\aws-ec2\\lib\\vpc.js:834:21)",
+              "NatGatewayProvider.configureNat (C:\\Users\\VISHALRS\\AppData\\Local\\Temp\\jsii-kernel-7oAUSy\\node_modules\\@aws-cdk\\aws-ec2\\lib\\nat.js:59:33)",
+              "Vpc.createNatGateways (C:\\Users\\VISHALRS\\AppData\\Local\\Temp\\jsii-kernel-7oAUSy\\node_modules\\@aws-cdk\\aws-ec2\\lib\\vpc.js:511:18)",
+              "new Vpc (C:\\Users\\VISHALRS\\AppData\\Local\\Temp\\jsii-kernel-7oAUSy\\node_modules\\@aws-cdk\\aws-ec2\\lib\\vpc.js:378:22)",
+              "C:\\Users\\VISHALRS\\Documents\\coding\\realtime-anomaly-detection-aws\\.env\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:3556:49",
+              "Kernel._wrapSandboxCode (C:\\Users\\VISHALRS\\Documents\\coding\\realtime-anomaly-detection-aws\\.env\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:4040:16)",
+              "Kernel._create (C:\\Users\\VISHALRS\\Documents\\coding\\realtime-anomaly-detection-aws\\.env\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:3556:26)",
+              "Kernel.create (C:\\Users\\VISHALRS\\Documents\\coding\\realtime-anomaly-detection-aws\\.env\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:3300:21)",
+              "KernelHost.processRequest (C:\\Users\\VISHALRS\\Documents\\coding\\realtime-anomaly-detection-aws\\.env\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:13119:28)",
+              "KernelHost.run (C:\\Users\\VISHALRS\\Documents\\coding\\realtime-anomaly-detection-aws\\.env\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:13057:14)",
+              "Immediate._onImmediate (C:\\Users\\VISHALRS\\Documents\\coding\\realtime-anomaly-detection-aws\\.env\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:13060:37)",
+              "processImmediate (node:internal/timers:466:21)"
+            ]
+          }
+        ],
+        "/anomaly-detection-data-streams/VPC/publicSubnet2/Subnet": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "VPCpublicSubnet2Subnet2B2DFF71",
+            "trace": [
+              "new Subnet (C:\\Users\\VISHALRS\\AppData\\Local\\Temp\\jsii-kernel-7oAUSy\\node_modules\\@aws-cdk\\aws-ec2\\lib\\vpc.js:653:24)",
+              "new PublicSubnet (C:\\Users\\VISHALRS\\AppData\\Local\\Temp\\jsii-kernel-7oAUSy\\node_modules\\@aws-cdk\\aws-ec2\\lib\\vpc.js:822:9)",
+              "C:\\Users\\VISHALRS\\AppData\\Local\\Temp\\jsii-kernel-7oAUSy\\node_modules\\@aws-cdk\\aws-ec2\\lib\\vpc.js:553:42",
+              "Array.forEach (<anonymous>)",
+              "Vpc.createSubnetResources (C:\\Users\\VISHALRS\\AppData\\Local\\Temp\\jsii-kernel-7oAUSy\\node_modules\\@aws-cdk\\aws-ec2\\lib\\vpc.js:537:32)",
+              "Vpc.createSubnets (C:\\Users\\VISHALRS\\AppData\\Local\\Temp\\jsii-kernel-7oAUSy\\node_modules\\@aws-cdk\\aws-ec2\\lib\\vpc.js:533:18)",
+              "new Vpc (C:\\Users\\VISHALRS\\AppData\\Local\\Temp\\jsii-kernel-7oAUSy\\node_modules\\@aws-cdk\\aws-ec2\\lib\\vpc.js:361:14)",
+              "C:\\Users\\VISHALRS\\Documents\\coding\\realtime-anomaly-detection-aws\\.env\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:3556:49",
+              "Kernel._wrapSandboxCode (C:\\Users\\VISHALRS\\Documents\\coding\\realtime-anomaly-detection-aws\\.env\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:4040:16)",
+              "Kernel._create (C:\\Users\\VISHALRS\\Documents\\coding\\realtime-anomaly-detection-aws\\.env\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:3556:26)",
+              "Kernel.create (C:\\Users\\VISHALRS\\Documents\\coding\\realtime-anomaly-detection-aws\\.env\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:3300:21)",
+              "KernelHost.processRequest (C:\\Users\\VISHALRS\\Documents\\coding\\realtime-anomaly-detection-aws\\.env\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:13119:28)",
+              "KernelHost.run (C:\\Users\\VISHALRS\\Documents\\coding\\realtime-anomaly-detection-aws\\.env\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:13057:14)",
+              "Immediate._onImmediate (C:\\Users\\VISHALRS\\Documents\\coding\\realtime-anomaly-detection-aws\\.env\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:13060:37)",
+              "processImmediate (node:internal/timers:466:21)"
+            ]
+          }
+        ],
+        "/anomaly-detection-data-streams/VPC/publicSubnet2/RouteTable": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "VPCpublicSubnet2RouteTable55DAB1BB",
+            "trace": [
+              "new Subnet (C:\\Users\\VISHALRS\\AppData\\Local\\Temp\\jsii-kernel-7oAUSy\\node_modules\\@aws-cdk\\aws-ec2\\lib\\vpc.js:669:23)",
+              "new PublicSubnet (C:\\Users\\VISHALRS\\AppData\\Local\\Temp\\jsii-kernel-7oAUSy\\node_modules\\@aws-cdk\\aws-ec2\\lib\\vpc.js:822:9)",
+              "C:\\Users\\VISHALRS\\AppData\\Local\\Temp\\jsii-kernel-7oAUSy\\node_modules\\@aws-cdk\\aws-ec2\\lib\\vpc.js:553:42",
+              "Array.forEach (<anonymous>)",
+              "Vpc.createSubnetResources (C:\\Users\\VISHALRS\\AppData\\Local\\Temp\\jsii-kernel-7oAUSy\\node_modules\\@aws-cdk\\aws-ec2\\lib\\vpc.js:537:32)",
+              "Vpc.createSubnets (C:\\Users\\VISHALRS\\AppData\\Local\\Temp\\jsii-kernel-7oAUSy\\node_modules\\@aws-cdk\\aws-ec2\\lib\\vpc.js:533:18)",
+              "new Vpc (C:\\Users\\VISHALRS\\AppData\\Local\\Temp\\jsii-kernel-7oAUSy\\node_modules\\@aws-cdk\\aws-ec2\\lib\\vpc.js:361:14)",
+              "C:\\Users\\VISHALRS\\Documents\\coding\\realtime-anomaly-detection-aws\\.env\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:3556:49",
+              "Kernel._wrapSandboxCode (C:\\Users\\VISHALRS\\Documents\\coding\\realtime-anomaly-detection-aws\\.env\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:4040:16)",
+              "Kernel._create (C:\\Users\\VISHALRS\\Documents\\coding\\realtime-anomaly-detection-aws\\.env\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:3556:26)",
+              "Kernel.create (C:\\Users\\VISHALRS\\Documents\\coding\\realtime-anomaly-detection-aws\\.env\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:3300:21)",
+              "KernelHost.processRequest (C:\\Users\\VISHALRS\\Documents\\coding\\realtime-anomaly-detection-aws\\.env\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:13119:28)",
+              "KernelHost.run (C:\\Users\\VISHALRS\\Documents\\coding\\realtime-anomaly-detection-aws\\.env\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:13057:14)",
+              "Immediate._onImmediate (C:\\Users\\VISHALRS\\Documents\\coding\\realtime-anomaly-detection-aws\\.env\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:13060:37)",
+              "processImmediate (node:internal/timers:466:21)"
+            ]
+          }
+        ],
+        "/anomaly-detection-data-streams/VPC/publicSubnet2/RouteTableAssociation": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "VPCpublicSubnet2RouteTableAssociation0849466B",
+            "trace": [
+              "new Subnet (C:\\Users\\VISHALRS\\AppData\\Local\\Temp\\jsii-kernel-7oAUSy\\node_modules\\@aws-cdk\\aws-ec2\\lib\\vpc.js:674:9)",
+              "new PublicSubnet (C:\\Users\\VISHALRS\\AppData\\Local\\Temp\\jsii-kernel-7oAUSy\\node_modules\\@aws-cdk\\aws-ec2\\lib\\vpc.js:822:9)",
+              "C:\\Users\\VISHALRS\\AppData\\Local\\Temp\\jsii-kernel-7oAUSy\\node_modules\\@aws-cdk\\aws-ec2\\lib\\vpc.js:553:42",
+              "Array.forEach (<anonymous>)",
+              "Vpc.createSubnetResources (C:\\Users\\VISHALRS\\AppData\\Local\\Temp\\jsii-kernel-7oAUSy\\node_modules\\@aws-cdk\\aws-ec2\\lib\\vpc.js:537:32)",
+              "Vpc.createSubnets (C:\\Users\\VISHALRS\\AppData\\Local\\Temp\\jsii-kernel-7oAUSy\\node_modules\\@aws-cdk\\aws-ec2\\lib\\vpc.js:533:18)",
+              "new Vpc (C:\\Users\\VISHALRS\\AppData\\Local\\Temp\\jsii-kernel-7oAUSy\\node_modules\\@aws-cdk\\aws-ec2\\lib\\vpc.js:361:14)",
+              "C:\\Users\\VISHALRS\\Documents\\coding\\realtime-anomaly-detection-aws\\.env\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:3556:49",
+              "Kernel._wrapSandboxCode (C:\\Users\\VISHALRS\\Documents\\coding\\realtime-anomaly-detection-aws\\.env\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:4040:16)",
+              "Kernel._create (C:\\Users\\VISHALRS\\Documents\\coding\\realtime-anomaly-detection-aws\\.env\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:3556:26)",
+              "Kernel.create (C:\\Users\\VISHALRS\\Documents\\coding\\realtime-anomaly-detection-aws\\.env\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:3300:21)",
+              "KernelHost.processRequest (C:\\Users\\VISHALRS\\Documents\\coding\\realtime-anomaly-detection-aws\\.env\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:13119:28)",
+              "KernelHost.run (C:\\Users\\VISHALRS\\Documents\\coding\\realtime-anomaly-detection-aws\\.env\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:13057:14)",
+              "Immediate._onImmediate (C:\\Users\\VISHALRS\\Documents\\coding\\realtime-anomaly-detection-aws\\.env\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:13060:37)",
+              "processImmediate (node:internal/timers:466:21)"
+            ]
+          }
+        ],
+        "/anomaly-detection-data-streams/VPC/publicSubnet2/DefaultRoute": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "VPCpublicSubnet2DefaultRoute9ED4D6BC",
+            "trace": [
+              "PublicSubnet.addDefaultInternetRoute (C:\\Users\\VISHALRS\\AppData\\Local\\Temp\\jsii-kernel-7oAUSy\\node_modules\\@aws-cdk\\aws-ec2\\lib\\vpc.js:709:23)",
+              "C:\\Users\\VISHALRS\\AppData\\Local\\Temp\\jsii-kernel-7oAUSy\\node_modules\\@aws-cdk\\aws-ec2\\lib\\vpc.js:373:30",
+              "Array.forEach (<anonymous>)",
+              "new Vpc (C:\\Users\\VISHALRS\\AppData\\Local\\Temp\\jsii-kernel-7oAUSy\\node_modules\\@aws-cdk\\aws-ec2\\lib\\vpc.js:372:32)",
+              "C:\\Users\\VISHALRS\\Documents\\coding\\realtime-anomaly-detection-aws\\.env\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:3556:49",
+              "Kernel._wrapSandboxCode (C:\\Users\\VISHALRS\\Documents\\coding\\realtime-anomaly-detection-aws\\.env\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:4040:16)",
+              "Kernel._create (C:\\Users\\VISHALRS\\Documents\\coding\\realtime-anomaly-detection-aws\\.env\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:3556:26)",
+              "Kernel.create (C:\\Users\\VISHALRS\\Documents\\coding\\realtime-anomaly-detection-aws\\.env\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:3300:21)",
+              "KernelHost.processRequest (C:\\Users\\VISHALRS\\Documents\\coding\\realtime-anomaly-detection-aws\\.env\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:13119:28)",
+              "KernelHost.run (C:\\Users\\VISHALRS\\Documents\\coding\\realtime-anomaly-detection-aws\\.env\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:13057:14)",
+              "Immediate._onImmediate (C:\\Users\\VISHALRS\\Documents\\coding\\realtime-anomaly-detection-aws\\.env\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:13060:37)",
+              "processImmediate (node:internal/timers:466:21)"
+            ]
+          }
+        ],
+        "/anomaly-detection-data-streams/VPC/IGW": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "VPCIGWB7E252D3",
+            "trace": [
+              "new Vpc (C:\\Users\\VISHALRS\\AppData\\Local\\Temp\\jsii-kernel-7oAUSy\\node_modules\\@aws-cdk\\aws-ec2\\lib\\vpc.js:365:25)",
+              "C:\\Users\\VISHALRS\\Documents\\coding\\realtime-anomaly-detection-aws\\.env\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:3556:49",
+              "Kernel._wrapSandboxCode (C:\\Users\\VISHALRS\\Documents\\coding\\realtime-anomaly-detection-aws\\.env\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:4040:16)",
+              "Kernel._create (C:\\Users\\VISHALRS\\Documents\\coding\\realtime-anomaly-detection-aws\\.env\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:3556:26)",
+              "Kernel.create (C:\\Users\\VISHALRS\\Documents\\coding\\realtime-anomaly-detection-aws\\.env\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:3300:21)",
+              "KernelHost.processRequest (C:\\Users\\VISHALRS\\Documents\\coding\\realtime-anomaly-detection-aws\\.env\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:13119:28)",
+              "KernelHost.run (C:\\Users\\VISHALRS\\Documents\\coding\\realtime-anomaly-detection-aws\\.env\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:13057:14)",
+              "Immediate._onImmediate (C:\\Users\\VISHALRS\\Documents\\coding\\realtime-anomaly-detection-aws\\.env\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:13060:37)",
+              "processImmediate (node:internal/timers:466:21)"
+            ]
+          }
+        ],
+        "/anomaly-detection-data-streams/VPC/VPCGW": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "VPCVPCGW99B986DC",
+            "trace": [
+              "new Vpc (C:\\Users\\VISHALRS\\AppData\\Local\\Temp\\jsii-kernel-7oAUSy\\node_modules\\@aws-cdk\\aws-ec2\\lib\\vpc.js:368:25)",
+              "C:\\Users\\VISHALRS\\Documents\\coding\\realtime-anomaly-detection-aws\\.env\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:3556:49",
+              "Kernel._wrapSandboxCode (C:\\Users\\VISHALRS\\Documents\\coding\\realtime-anomaly-detection-aws\\.env\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:4040:16)",
+              "Kernel._create (C:\\Users\\VISHALRS\\Documents\\coding\\realtime-anomaly-detection-aws\\.env\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:3556:26)",
+              "Kernel.create (C:\\Users\\VISHALRS\\Documents\\coding\\realtime-anomaly-detection-aws\\.env\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:3300:21)",
+              "KernelHost.processRequest (C:\\Users\\VISHALRS\\Documents\\coding\\realtime-anomaly-detection-aws\\.env\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:13119:28)",
+              "KernelHost.run (C:\\Users\\VISHALRS\\Documents\\coding\\realtime-anomaly-detection-aws\\.env\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:13057:14)",
+              "Immediate._onImmediate (C:\\Users\\VISHALRS\\Documents\\coding\\realtime-anomaly-detection-aws\\.env\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:13060:37)",
+              "processImmediate (node:internal/timers:466:21)"
+            ]
+          }
+        ],
+        "/anomaly-detection-data-streams/producerInstanceRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "producerInstanceRoleC9776AF2",
+            "trace": [
+              "new Role (C:\\Users\\VISHALRS\\AppData\\Local\\Temp\\jsii-kernel-7oAUSy\\node_modules\\@aws-cdk\\aws-iam\\lib\\role.js:70:22)",
+              "C:\\Users\\VISHALRS\\Documents\\coding\\realtime-anomaly-detection-aws\\.env\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:3556:49",
+              "Kernel._wrapSandboxCode (C:\\Users\\VISHALRS\\Documents\\coding\\realtime-anomaly-detection-aws\\.env\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:4040:16)",
+              "Kernel._create (C:\\Users\\VISHALRS\\Documents\\coding\\realtime-anomaly-detection-aws\\.env\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:3556:26)",
+              "Kernel.create (C:\\Users\\VISHALRS\\Documents\\coding\\realtime-anomaly-detection-aws\\.env\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:3300:21)",
+              "KernelHost.processRequest (C:\\Users\\VISHALRS\\Documents\\coding\\realtime-anomaly-detection-aws\\.env\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:13119:28)",
+              "KernelHost.run (C:\\Users\\VISHALRS\\Documents\\coding\\realtime-anomaly-detection-aws\\.env\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:13057:14)",
+              "Immediate._onImmediate (C:\\Users\\VISHALRS\\Documents\\coding\\realtime-anomaly-detection-aws\\.env\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:13060:37)",
+              "processImmediate (node:internal/timers:466:21)"
+            ]
+          }
+        ],
+        "/anomaly-detection-data-streams/producerInstanceRole/DefaultPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "producerInstanceRoleDefaultPolicy7FCABBDA",
+            "trace": [
+              "new Policy (C:\\Users\\VISHALRS\\AppData\\Local\\Temp\\jsii-kernel-7oAUSy\\node_modules\\@aws-cdk\\aws-iam\\lib\\policy.js:53:26)",
+              "Role.addToPrincipalPolicy (C:\\Users\\VISHALRS\\AppData\\Local\\Temp\\jsii-kernel-7oAUSy\\node_modules\\@aws-cdk\\aws-iam\\lib\\role.js:203:34)",
+              "Function.addToPrincipal (C:\\Users\\VISHALRS\\AppData\\Local\\Temp\\jsii-kernel-7oAUSy\\node_modules\\@aws-cdk\\aws-iam\\lib\\grant.js:88:65)",
+              "Stream.grant (C:\\Users\\VISHALRS\\AppData\\Local\\Temp\\jsii-kernel-7oAUSy\\node_modules\\@aws-cdk\\aws-kinesis\\lib\\stream.js:73:26)",
+              "Stream.grantWrite (C:\\Users\\VISHALRS\\AppData\\Local\\Temp\\jsii-kernel-7oAUSy\\node_modules\\@aws-cdk\\aws-kinesis\\lib\\stream.js:49:26)",
+              "C:\\Users\\VISHALRS\\Documents\\coding\\realtime-anomaly-detection-aws\\.env\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:3380:51",
+              "Kernel._wrapSandboxCode (C:\\Users\\VISHALRS\\Documents\\coding\\realtime-anomaly-detection-aws\\.env\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:4040:16)",
+              "C:\\Users\\VISHALRS\\Documents\\coding\\realtime-anomaly-detection-aws\\.env\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:3380:25",
+              "Kernel._ensureSync (C:\\Users\\VISHALRS\\Documents\\coding\\realtime-anomaly-detection-aws\\.env\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:4017:20)",
+              "Kernel.invoke (C:\\Users\\VISHALRS\\Documents\\coding\\realtime-anomaly-detection-aws\\.env\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:3379:26)",
+              "KernelHost.processRequest (C:\\Users\\VISHALRS\\Documents\\coding\\realtime-anomaly-detection-aws\\.env\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:13119:28)",
+              "KernelHost.run (C:\\Users\\VISHALRS\\Documents\\coding\\realtime-anomaly-detection-aws\\.env\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:13057:14)",
+              "Immediate._onImmediate (C:\\Users\\VISHALRS\\Documents\\coding\\realtime-anomaly-detection-aws\\.env\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:13060:37)",
+              "processImmediate (node:internal/timers:466:21)"
+            ]
+          }
+        ],
+        "/anomaly-detection-data-streams/producerInstance/InstanceSecurityGroup/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "producerInstanceInstanceSecurityGroupDF0C4BFE",
+            "trace": [
+              "new SecurityGroup (C:\\Users\\VISHALRS\\AppData\\Local\\Temp\\jsii-kernel-7oAUSy\\node_modules\\@aws-cdk\\aws-ec2\\lib\\security-group.js:205:30)",
+              "new Instance (C:\\Users\\VISHALRS\\AppData\\Local\\Temp\\jsii-kernel-7oAUSy\\node_modules\\@aws-cdk\\aws-ec2\\lib\\instance.js:36:34)",
+              "C:\\Users\\VISHALRS\\Documents\\coding\\realtime-anomaly-detection-aws\\.env\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:3556:49",
+              "Kernel._wrapSandboxCode (C:\\Users\\VISHALRS\\Documents\\coding\\realtime-anomaly-detection-aws\\.env\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:4040:16)",
+              "Kernel._create (C:\\Users\\VISHALRS\\Documents\\coding\\realtime-anomaly-detection-aws\\.env\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:3556:26)",
+              "Kernel.create (C:\\Users\\VISHALRS\\Documents\\coding\\realtime-anomaly-detection-aws\\.env\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:3300:21)",
+              "KernelHost.processRequest (C:\\Users\\VISHALRS\\Documents\\coding\\realtime-anomaly-detection-aws\\.env\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:13119:28)",
+              "KernelHost.run (C:\\Users\\VISHALRS\\Documents\\coding\\realtime-anomaly-detection-aws\\.env\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:13057:14)",
+              "Immediate._onImmediate (C:\\Users\\VISHALRS\\Documents\\coding\\realtime-anomaly-detection-aws\\.env\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:13060:37)",
+              "processImmediate (node:internal/timers:466:21)"
+            ]
+          }
+        ],
+        "/anomaly-detection-data-streams/producerInstance/InstanceProfile": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "producerInstanceInstanceProfile14DF1520",
+            "trace": [
+              "new Instance (C:\\Users\\VISHALRS\\AppData\\Local\\Temp\\jsii-kernel-7oAUSy\\node_modules\\@aws-cdk\\aws-ec2\\lib\\instance.js:48:28)",
+              "C:\\Users\\VISHALRS\\Documents\\coding\\realtime-anomaly-detection-aws\\.env\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:3556:49",
+              "Kernel._wrapSandboxCode (C:\\Users\\VISHALRS\\Documents\\coding\\realtime-anomaly-detection-aws\\.env\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:4040:16)",
+              "Kernel._create (C:\\Users\\VISHALRS\\Documents\\coding\\realtime-anomaly-detection-aws\\.env\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:3556:26)",
+              "Kernel.create (C:\\Users\\VISHALRS\\Documents\\coding\\realtime-anomaly-detection-aws\\.env\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:3300:21)",
+              "KernelHost.processRequest (C:\\Users\\VISHALRS\\Documents\\coding\\realtime-anomaly-detection-aws\\.env\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:13119:28)",
+              "KernelHost.run (C:\\Users\\VISHALRS\\Documents\\coding\\realtime-anomaly-detection-aws\\.env\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:13057:14)",
+              "Immediate._onImmediate (C:\\Users\\VISHALRS\\Documents\\coding\\realtime-anomaly-detection-aws\\.env\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:13060:37)",
+              "processImmediate (node:internal/timers:466:21)"
+            ]
+          }
+        ],
+        "/anomaly-detection-data-streams/producerInstance/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "producerInstance7DFDF3CC",
+            "trace": [
+              "new Instance (C:\\Users\\VISHALRS\\AppData\\Local\\Temp\\jsii-kernel-7oAUSy\\node_modules\\@aws-cdk\\aws-ec2\\lib\\instance.js:83:25)",
+              "C:\\Users\\VISHALRS\\Documents\\coding\\realtime-anomaly-detection-aws\\.env\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:3556:49",
+              "Kernel._wrapSandboxCode (C:\\Users\\VISHALRS\\Documents\\coding\\realtime-anomaly-detection-aws\\.env\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:4040:16)",
+              "Kernel._create (C:\\Users\\VISHALRS\\Documents\\coding\\realtime-anomaly-detection-aws\\.env\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:3556:26)",
+              "Kernel.create (C:\\Users\\VISHALRS\\Documents\\coding\\realtime-anomaly-detection-aws\\.env\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:3300:21)",
+              "KernelHost.processRequest (C:\\Users\\VISHALRS\\Documents\\coding\\realtime-anomaly-detection-aws\\.env\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:13119:28)",
+              "KernelHost.run (C:\\Users\\VISHALRS\\Documents\\coding\\realtime-anomaly-detection-aws\\.env\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:13057:14)",
+              "Immediate._onImmediate (C:\\Users\\VISHALRS\\Documents\\coding\\realtime-anomaly-detection-aws\\.env\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:13060:37)",
+              "processImmediate (node:internal/timers:466:21)"
+            ]
+          }
+        ],
+        "/anomaly-detection-data-streams/SsmParameterValue:--aws--service--ami-amazon-linux-latest--amzn2-ami-hvm-x86_64-gp2:C96584B6-F00A-464E-AD19-53AFF4B05118.Parameter": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SsmParameterValueawsserviceamiamazonlinuxlatestamzn2amihvmx8664gp2C96584B6F00A464EAD1953AFF4B05118Parameter",
+            "trace": [
+              "Function.fromStringParameterAttributes (C:\\Users\\VISHALRS\\AppData\\Local\\Temp\\jsii-kernel-7oAUSy\\node_modules\\@aws-cdk\\aws-ssm\\lib\\parameter.js:132:15)",
+              "Function.valueForTypedStringParameter (C:\\Users\\VISHALRS\\AppData\\Local\\Temp\\jsii-kernel-7oAUSy\\node_modules\\@aws-cdk\\aws-ssm\\lib\\parameter.js:206:21)",
+              "AmazonLinuxImage.getImage (C:\\Users\\VISHALRS\\AppData\\Local\\Temp\\jsii-kernel-7oAUSy\\node_modules\\@aws-cdk\\aws-ec2\\lib\\machine-image.js:123:41)",
+              "new Instance (C:\\Users\\VISHALRS\\AppData\\Local\\Temp\\jsii-kernel-7oAUSy\\node_modules\\@aws-cdk\\aws-ec2\\lib\\instance.js:52:48)",
+              "C:\\Users\\VISHALRS\\Documents\\coding\\realtime-anomaly-detection-aws\\.env\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:3556:49",
+              "Kernel._wrapSandboxCode (C:\\Users\\VISHALRS\\Documents\\coding\\realtime-anomaly-detection-aws\\.env\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:4040:16)",
+              "Kernel._create (C:\\Users\\VISHALRS\\Documents\\coding\\realtime-anomaly-detection-aws\\.env\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:3556:26)",
+              "Kernel.create (C:\\Users\\VISHALRS\\Documents\\coding\\realtime-anomaly-detection-aws\\.env\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:3300:21)",
+              "KernelHost.processRequest (C:\\Users\\VISHALRS\\Documents\\coding\\realtime-anomaly-detection-aws\\.env\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:13119:28)",
+              "KernelHost.run (C:\\Users\\VISHALRS\\Documents\\coding\\realtime-anomaly-detection-aws\\.env\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:13057:14)",
+              "Immediate._onImmediate (C:\\Users\\VISHALRS\\Documents\\coding\\realtime-anomaly-detection-aws\\.env\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:13060:37)",
+              "processImmediate (node:internal/timers:466:21)"
+            ]
+          }
+        ],
+        "/anomaly-detection-data-streams/CDKMetadata/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadata",
+            "trace": [
+              "new MetadataResource (C:\\Users\\VISHALRS\\AppData\\Local\\Temp\\jsii-kernel-7oAUSy\\node_modules\\@aws-cdk\\core\\lib\\private\\metadata-resource.js:22:30)",
+              "C:\\Users\\VISHALRS\\AppData\\Local\\Temp\\jsii-kernel-7oAUSy\\node_modules\\@aws-cdk\\core\\lib\\private\\synthesis.js:127:9",
+              "visit (C:\\Users\\VISHALRS\\AppData\\Local\\Temp\\jsii-kernel-7oAUSy\\node_modules\\@aws-cdk\\core\\lib\\private\\synthesis.js:181:9)",
+              "visit (C:\\Users\\VISHALRS\\AppData\\Local\\Temp\\jsii-kernel-7oAUSy\\node_modules\\@aws-cdk\\core\\lib\\private\\synthesis.js:178:9)",
+              "injectMetadataResources (C:\\Users\\VISHALRS\\AppData\\Local\\Temp\\jsii-kernel-7oAUSy\\node_modules\\@aws-cdk\\core\\lib\\private\\synthesis.js:116:5)",
+              "Object.synthesize (C:\\Users\\VISHALRS\\AppData\\Local\\Temp\\jsii-kernel-7oAUSy\\node_modules\\@aws-cdk\\core\\lib\\private\\synthesis.js:16:5)",
+              "App.synth (C:\\Users\\VISHALRS\\AppData\\Local\\Temp\\jsii-kernel-7oAUSy\\node_modules\\@aws-cdk\\core\\lib\\stage.js:98:41)",
+              "C:\\Users\\VISHALRS\\Documents\\coding\\realtime-anomaly-detection-aws\\.env\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:3380:51",
+              "Kernel._wrapSandboxCode (C:\\Users\\VISHALRS\\Documents\\coding\\realtime-anomaly-detection-aws\\.env\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:4040:16)",
+              "C:\\Users\\VISHALRS\\Documents\\coding\\realtime-anomaly-detection-aws\\.env\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:3380:25",
+              "Kernel._ensureSync (C:\\Users\\VISHALRS\\Documents\\coding\\realtime-anomaly-detection-aws\\.env\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:4017:20)",
+              "Kernel.invoke (C:\\Users\\VISHALRS\\Documents\\coding\\realtime-anomaly-detection-aws\\.env\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:3379:26)",
+              "KernelHost.processRequest (C:\\Users\\VISHALRS\\Documents\\coding\\realtime-anomaly-detection-aws\\.env\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:13119:28)",
+              "KernelHost.run (C:\\Users\\VISHALRS\\Documents\\coding\\realtime-anomaly-detection-aws\\.env\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:13057:14)",
+              "Immediate._onImmediate (C:\\Users\\VISHALRS\\Documents\\coding\\realtime-anomaly-detection-aws\\.env\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:13060:37)",
+              "processImmediate (node:internal/timers:466:21)"
+            ]
+          }
+        ],
+        "/anomaly-detection-data-streams/CDKMetadata/Condition": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadataAvailable",
+            "trace": [
+              "new MetadataResource (C:\\Users\\VISHALRS\\AppData\\Local\\Temp\\jsii-kernel-7oAUSy\\node_modules\\@aws-cdk\\core\\lib\\private\\metadata-resource.js:30:35)",
+              "C:\\Users\\VISHALRS\\AppData\\Local\\Temp\\jsii-kernel-7oAUSy\\node_modules\\@aws-cdk\\core\\lib\\private\\synthesis.js:127:9",
+              "visit (C:\\Users\\VISHALRS\\AppData\\Local\\Temp\\jsii-kernel-7oAUSy\\node_modules\\@aws-cdk\\core\\lib\\private\\synthesis.js:181:9)",
+              "visit (C:\\Users\\VISHALRS\\AppData\\Local\\Temp\\jsii-kernel-7oAUSy\\node_modules\\@aws-cdk\\core\\lib\\private\\synthesis.js:178:9)",
+              "injectMetadataResources (C:\\Users\\VISHALRS\\AppData\\Local\\Temp\\jsii-kernel-7oAUSy\\node_modules\\@aws-cdk\\core\\lib\\private\\synthesis.js:116:5)",
+              "Object.synthesize (C:\\Users\\VISHALRS\\AppData\\Local\\Temp\\jsii-kernel-7oAUSy\\node_modules\\@aws-cdk\\core\\lib\\private\\synthesis.js:16:5)",
+              "App.synth (C:\\Users\\VISHALRS\\AppData\\Local\\Temp\\jsii-kernel-7oAUSy\\node_modules\\@aws-cdk\\core\\lib\\stage.js:98:41)",
+              "C:\\Users\\VISHALRS\\Documents\\coding\\realtime-anomaly-detection-aws\\.env\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:3380:51",
+              "Kernel._wrapSandboxCode (C:\\Users\\VISHALRS\\Documents\\coding\\realtime-anomaly-detection-aws\\.env\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:4040:16)",
+              "C:\\Users\\VISHALRS\\Documents\\coding\\realtime-anomaly-detection-aws\\.env\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:3380:25",
+              "Kernel._ensureSync (C:\\Users\\VISHALRS\\Documents\\coding\\realtime-anomaly-detection-aws\\.env\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:4017:20)",
+              "Kernel.invoke (C:\\Users\\VISHALRS\\Documents\\coding\\realtime-anomaly-detection-aws\\.env\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:3379:26)",
+              "KernelHost.processRequest (C:\\Users\\VISHALRS\\Documents\\coding\\realtime-anomaly-detection-aws\\.env\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:13119:28)",
+              "KernelHost.run (C:\\Users\\VISHALRS\\Documents\\coding\\realtime-anomaly-detection-aws\\.env\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:13057:14)",
+              "Immediate._onImmediate (C:\\Users\\VISHALRS\\Documents\\coding\\realtime-anomaly-detection-aws\\.env\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:13060:37)",
+              "processImmediate (node:internal/timers:466:21)"
+            ]
+          }
+        ]
+      }
+    }
+  }
+}
