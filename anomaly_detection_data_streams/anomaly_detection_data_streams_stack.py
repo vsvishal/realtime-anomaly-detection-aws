@@ -175,7 +175,7 @@ class AwsAnomalyDetectionDataStreamsStack(core.Stack):
             iam.ManagedPolicy.from_aws_managed_policy_name("AmazonSSMManagedInstanceCore"))
         input_data_stream.grant_write(producer_role)
 
-        user_data = '#!/bin/bash\n yum update -y\n yum install python3 -y\n sudo yum install -y jq\n pip3 install boto3 --user\n pip3 install numpy --user\n curl https://realtime-anomaly-detection-aws.s3.ap-south-1.amazonaws.com/producer/producer.py -o /tmp/producer.py'
+        user_data = '#!/bin/bash\n yum update -y\n yum install python3 -y\n sudo yum install -y jq\n pip3 install boto3 --user\n pip3 install numpy --user\n curl https://anomaly-detection-data-strea-outputbucket14bae956-1n0wwfy3h1wgy.s3.ap-south-1.amazonaws.com/producer/producer.py -o /tmp/producer.py'
 
         producer_instance = ec2.Instance(self, 'producerInstance',
                                          instance_type=ec2.InstanceType(
